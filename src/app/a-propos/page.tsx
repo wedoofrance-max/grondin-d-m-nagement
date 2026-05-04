@@ -56,7 +56,7 @@ export default function AProposPage() {
           </div>
           <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
             <Image
-              src="/images/equipe-grondin.png"
+              src="/images/equipe-grondin.webp"
               alt="Équipe Grondin Déménagement devant le camion, prêts à intervenir"
               fill
               className="object-cover"

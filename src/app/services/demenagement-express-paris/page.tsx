@@ -86,7 +86,7 @@ export default function DemenagementExpressParisPage() {
           <div className="space-y-6">
             <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
               <Image
-                src="/images/emballage-porte.png"
+                src="/images/emballage-porte.webp"
                 alt="Déménageur Grondin portant un carton à l'entrée d'un logement parisien"
                 fill
                 className="object-cover"

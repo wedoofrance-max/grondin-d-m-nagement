@@ -139,7 +139,7 @@ export default function DemenagementParisServicePage() {
           <div className="space-y-6">
             <div className="relative rounded-2xl overflow-hidden aspect-[16/10]">
               <Image
-                src="/images/grondin-immeuble-paris.png"
+                src="/images/grondin-immeuble-paris.webp"
                 alt="Déménageur Grondin entrant dans un immeuble parisien avec les affaires"
                 fill
                 className="object-cover"

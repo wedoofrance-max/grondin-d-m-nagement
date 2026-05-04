@@ -126,13 +126,13 @@ export default function HomePage() {
           <h2 className="text-fluid-2xl font-bold text-neutral-900 text-center mb-10">Des équipes professionnelles à votre service</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <Image src="/images/equipe-grondin.png" alt="Équipe Grondin Déménagement en action devant le camion" fill className="object-cover" />
+              <Image src="/images/equipe-grondin.webp" alt="Équipe Grondin Déménagement en action devant le camion" fill className="object-cover" />
             </div>
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:col-span-1">
-              <Image src="/images/demenageur-carton.png" alt="Déménageur Grondin portant un carton lors d'un déménagement à Paris" fill className="object-cover" />
+              <Image src="/images/demenageur-carton.webp" alt="Déménageur Grondin portant un carton lors d'un déménagement à Paris" fill className="object-cover" />
             </div>
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-              <Image src="/images/grondin-immeuble-paris.png" alt="Déménageur Grondin à l'entrée d'un immeuble parisien" fill className="object-cover" />
+              <Image src="/images/grondin-immeuble-paris.webp" alt="Déménageur Grondin à l'entrée d'un immeuble parisien" fill className="object-cover" />
             </div>
           </div>
         </div>
