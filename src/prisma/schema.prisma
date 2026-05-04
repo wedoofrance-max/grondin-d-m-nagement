@@ -1,0 +1,47 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model DevisRequest {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  typeBien   String
+  superficie Int
+  nbPieces   Int
+
+  villeDepart      String
+  cpDepart         String
+  etageDepart      Int
+  ascenseurDepart  Boolean
+
+  villeArrivee      String
+  cpArrivee         String
+  etageArrivee      Int
+  ascenseurArrivee  Boolean
+
+  dateSouhaitee DateTime?
+  flexibilite   String
+  formule       String
+
+  prenom    String
+  nom       String
+  telephone String
+  email     String
+  message   String?
+
+  status    String  @default("nouveau")
+  source    String?
+  ipAddress String?
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("devis_requests")
+}

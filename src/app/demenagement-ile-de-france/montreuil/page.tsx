@@ -1,0 +1,118 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Icon } from '@iconify/react'
+import { FAQSection } from '@/components/sections/FAQSection'
+import { CTASection } from '@/components/sections/CTASection'
+import { Breadcrumb, BreadcrumbSchema } from '@/components/layout/Breadcrumb'
+
+export const metadata: Metadata = {
+  title: 'Déménagement Montreuil 93100 — Devis Gratuit | Grondin',
+  description: 'Déménageur à Montreuil (93100, Seine-Saint-Denis). Grondin Déménagement : intervention rapide, devis gratuit, 7j/7. Appelez le 01 85 44 00 50.',
+  alternates: { canonical: 'https://grondin-demenagement.fr/demenagement-ile-de-france/montreuil' },
+}
+
+const FAQ = [
+  {
+    question: 'Intervenez-vous dans tous les quartiers de Montreuil ?',
+    answer: 'Oui, nous couvrons l\'ensemble de Montreuil : le Bas-Montreuil très prisé et en pleine gentrification, la Croix de Chavaux, le centre-ville autour de la mairie, et les zones plus résidentielles proches de Vincennes. Chaque quartier a ses propres caractéristiques en termes de type de logement et d\'accès.',
+  },
+  {
+    question: 'Montreuil est-il difficile d\'accès pour les camions de déménagement ?',
+    answer: 'Certaines rues du Bas-Montreuil sont étroites et la circulation peut être dense aux heures de pointe. Nous évaluons l\'accès lors de la visite préalable et planifions si nécessaire l\'intervention tôt le matin. Le monte-meubles extérieur est disponible pour les logements en étage élevé sans ascenseur.',
+  },
+  {
+    question: 'Pouvez-vous déménager de Montreuil vers Paris en une journée ?',
+    answer: 'Oui. Montreuil est directement accessible depuis Paris via le Cours de Vincennes ou le boulevard Davout. Pour un volume standard (T2 ou T3), le déménagement se réalise en une journée, chargement et déchargement inclus.',
+  },
+]
+
+export default function DemenagementMontreuillPage() {
+  return (
+    <div className="min-h-screen bg-white">
+      <BreadcrumbSchema items={[
+        { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
+        { label: 'Déménagement Montreuil', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/montreuil' },
+      ]} />
+
+      <div className="bg-grondin-900 py-14">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
+          <Breadcrumb items={[
+            { label: 'Île-de-France', href: '/demenagement-ile-de-france' },
+            { label: 'Montreuil' },
+          ]} />
+          <h1 className="text-fluid-4xl font-extrabold text-white mt-4 mb-3">
+            Déménagement à Montreuil — Seine-Saint-Denis (93100)
+          </h1>
+          <p className="text-white/70 text-fluid-lg max-w-2xl">
+            Montreuil est une ville dynamique limitrophe de Paris (20ème arrondissement), avec un parc immobilier très diversifié allant des ateliers d'artistes du Bas-Montreuil aux grands ensembles résidentiels du nord de la ville.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/devis" className="inline-flex items-center gap-2 px-6 py-3 bg-grondin-500 text-white rounded-xl font-bold hover:bg-grondin-400 transition-colors">
+              <Icon icon="ph:file-text" width={18} height={18} aria-hidden />
+              Devis gratuit
+            </Link>
+            <a href="tel:+33185440050" className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-colors">
+              <Icon icon="ph:phone" width={18} height={18} aria-hidden />
+              01 85 44 00 50
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            <h2 className="text-fluid-2xl font-bold text-neutral-900 mb-4">
+              Votre déménageur à Montreuil
+            </h2>
+            <p className="text-neutral-600 leading-relaxed mb-4">
+              Montreuil présente une grande variété de logements : maisons de ville avec jardins dans le vieux Montreuil, appartements récents dans les résidences neuves du quartier Boissière-Acacia, lofts et espaces atypiques dans le secteur des ateliers. Cette diversité demande une équipe flexible et bien équipée pour s'adapter à chaque situation.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-8">
+              Nous effectuons une visite préalable pour anticiper les difficultés d'accès, choisir le bon véhicule et vous proposer une formule adaptée. Notre devis est gratuit et vous est remis sous 24h. Le jour J, nos déménageurs protègent sol et murs des parties communes et travaillent méthodiquement pour un déménagement serein.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },
+                { icon: 'ph:shield-check', title: 'Assurance incluse', desc: 'RC Professionnelle' },
+                { icon: 'ph:star-fill', title: '4,9/5 sur Google', desc: '34 avis vérifiés' },
+                { icon: 'ph:map-pin', title: 'Intervention locale', desc: 'Équipes basées en Île-de-France' },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-3 p-4 bg-grondin-50 rounded-xl">
+                  <Icon icon={item.icon} width={20} height={20} className="text-grondin-500 flex-shrink-0 mt-0.5" aria-hidden />
+                  <div>
+                    <p className="font-semibold text-neutral-900 text-sm">{item.title}</p>
+                    <p className="text-xs text-neutral-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="bg-grondin-900 rounded-3xl p-6 text-white">
+              <h3 className="font-bold mb-2">Devis Montreuil</h3>
+              <p className="text-grondin-200 text-sm mb-4">Réponse sous 24h.</p>
+              <Link href="/devis" className="flex items-center justify-center gap-2 w-full py-3 bg-grondin-500 text-white rounded-xl font-bold hover:bg-grondin-400 transition-colors">
+                <Icon icon="ph:file-text" width={18} height={18} aria-hidden />
+                Mon devis
+              </Link>
+              <a href="tel:+33185440050" className="flex items-center justify-center gap-2 w-full py-3 mt-2 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-colors text-sm">
+                <Icon icon="ph:phone" width={16} height={16} aria-hidden />
+                01 85 44 00 50
+              </a>
+            </div>
+            <Link href="/demenagement-ile-de-france" className="flex items-center gap-2 p-4 bg-neutral-50 rounded-xl text-sm text-neutral-600 hover:bg-grondin-50 hover:text-grondin-600 transition-colors border border-neutral-200">
+              <Icon icon="ph:arrow-left" width={16} height={16} aria-hidden />
+              Toutes les villes IDF
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <FAQSection items={FAQ} title="Questions sur le déménagement à Montreuil" eyebrow="FAQ" />
+      <CTASection />
+    </div>
+  )
+}

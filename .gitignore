@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large assets (host on CDN or upload directly to Vercel)
+/public/catalogue-particuliers-grondin.pdf
+
+# secrets
+.env

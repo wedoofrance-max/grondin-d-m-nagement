@@ -1,0 +1,118 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Icon } from '@iconify/react'
+import { FAQSection } from '@/components/sections/FAQSection'
+import { CTASection } from '@/components/sections/CTASection'
+import { Breadcrumb, BreadcrumbSchema } from '@/components/layout/Breadcrumb'
+
+export const metadata: Metadata = {
+  title: 'Déménagement Paris 2ème — Bourse, Sentier | Grondin',
+  description: 'Déménageur dans le 2ème arrondissement de Paris (Bourse, Sentier, Montorgueil). Grondin Déménagement : équipes expertes 7j/7, devis gratuit et personnalisé.',
+  alternates: { canonical: 'https://grondin-demenagement.fr/demenagement-paris/2eme-arrondissement' },
+}
+
+const FAQ = [
+  {
+    question: 'Le quartier Sentier est très animé — comment gérez-vous les déménagements en semaine ?',
+    answer: 'Le quartier Sentier, cœur du secteur textile et de la start-up nation parisienne, est effectivement très fréquenté en semaine. Nous recommandons les interventions tôt le matin (dès 8h30) ou le week-end pour faciliter l\'accès et le stationnement. La visite préalable nous permet d\'identifier la meilleure fenêtre horaire.',
+  },
+  {
+    question: 'Les immeubles du 2ème ont-ils souvent des ascenseurs ?',
+    answer: 'Le 2ème arrondissement est dominé par des immeubles haussmanniens et des immeubles anciens des 19ème et début 20ème siècles. Beaucoup n\'ont pas d\'ascenseur ou disposent d\'ascenseurs installés a posteriori, souvent étroits. Nous évaluons cela lors de la visite et prévoyons le monte-meubles si nécessaire.',
+  },
+  {
+    question: 'La rue Montorgueil et ses environs sont piétons — pouvez-vous quand même intervenir ?',
+    answer: 'Oui, nous gérons les accès dans les zones piétonnes en obtenant les autorisations nécessaires auprès de la Ville de Paris. Dans certains cas, nous utilisons des diables et des chariots pour parcourir à pied la distance entre le camion et l\'entrée de l\'immeuble.',
+  },
+]
+
+export default function DemenagementParis2Page() {
+  return (
+    <div className="min-h-screen bg-white">
+      <BreadcrumbSchema items={[
+        { label: 'Déménagement Paris', href: 'https://grondin-demenagement.fr/demenagement-paris' },
+        { label: 'Paris 2ème', href: 'https://grondin-demenagement.fr/demenagement-paris/2eme-arrondissement' },
+      ]} />
+
+      <div className="bg-grondin-900 py-14">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
+          <Breadcrumb items={[
+            { label: 'Déménagement Paris', href: '/demenagement-paris' },
+            { label: 'Paris 2ème' },
+          ]} />
+          <h1 className="text-fluid-4xl font-extrabold text-white mt-4 mb-3">
+            Déménagement dans le 2ème arrondissement de Paris
+          </h1>
+          <p className="text-white/70 text-fluid-lg max-w-2xl">
+            Le 2ème arrondissement (75002) — Bourse, Sentier, Montorgueil — est le plus petit de Paris. Son tissu d'immeubles anciens, ses passages couverts et ses ruelles caractéristiques demandent une approche logistique adaptée.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <Link href="/devis" className="inline-flex items-center gap-2 px-6 py-3 bg-grondin-500 text-white rounded-xl font-bold hover:bg-grondin-400 transition-colors">
+              <Icon icon="ph:file-text" width={18} height={18} aria-hidden />
+              Devis gratuit
+            </Link>
+            <a href="tel:+33185440050" className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-colors">
+              <Icon icon="ph:phone" width={18} height={18} aria-hidden />
+              01 85 44 00 50
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-16">
+        <div className="grid lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            <h2 className="text-fluid-2xl font-bold text-neutral-900 mb-4">
+              Votre déménageur dans le 2ème arrondissement
+            </h2>
+            <p className="text-neutral-600 leading-relaxed mb-4">
+              Le 2ème arrondissement, avec ses immeubles haussmanniens et ses bâtiments anciens du quartier Sentier, présente des escaliers souvent étroits, des cours intérieures et peu d'ascenseurs. La densité du quartier et la présence de nombreuses entreprises compliquent le stationnement en semaine. Le secteur de Montorgueil, en partie piétonnier, nécessite une planification spécifique.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-8">
+              Grondin Déménagement effectue une visite préalable gratuite pour anticiper toutes ces contraintes. Nous vous proposons un créneau adapté (tôt le matin, week-end) et gérons les autorisations de stationnement nécessaires. Devis remis sous 24h, assurance RC Professionnelle incluse.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-3">
+              {[
+                { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },
+                { icon: 'ph:shield-check', title: 'Assurance incluse', desc: 'RC Professionnelle' },
+                { icon: 'ph:star-fill', title: '4,9/5 sur Google', desc: '34 avis vérifiés' },
+                { icon: 'ph:users', title: '1 500+ clients', desc: 'Satisfaits à Paris et IDF' },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-3 p-4 bg-grondin-50 rounded-xl">
+                  <Icon icon={item.icon} width={20} height={20} className="text-grondin-500 flex-shrink-0 mt-0.5" aria-hidden />
+                  <div>
+                    <p className="font-semibold text-neutral-900 text-sm">{item.title}</p>
+                    <p className="text-xs text-neutral-600">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="bg-grondin-900 rounded-3xl p-6 text-white">
+              <h3 className="font-bold mb-2">Devis gratuit 2ème</h3>
+              <p className="text-grondin-200 text-sm mb-4">Réponse sous 24h.</p>
+              <Link href="/devis" className="flex items-center justify-center gap-2 w-full py-3 bg-grondin-500 text-white rounded-xl font-bold hover:bg-grondin-400 transition-colors">
+                <Icon icon="ph:file-text" width={18} height={18} aria-hidden />
+                Mon devis
+              </Link>
+              <a href="tel:+33185440050" className="flex items-center justify-center gap-2 w-full py-3 mt-2 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-colors text-sm">
+                <Icon icon="ph:phone" width={16} height={16} aria-hidden />
+                01 85 44 00 50
+              </a>
+            </div>
+            <Link href="/demenagement-paris" className="flex items-center gap-2 p-4 bg-neutral-50 rounded-xl text-sm text-neutral-600 hover:bg-grondin-50 hover:text-grondin-600 transition-colors border border-neutral-200">
+              <Icon icon="ph:arrow-left" width={16} height={16} aria-hidden />
+              Tous les arrondissements
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <FAQSection items={FAQ} title="Questions sur le déménagement dans le 2ème" eyebrow="FAQ" />
+      <CTASection />
+    </div>
+  )
+}

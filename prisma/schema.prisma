@@ -1,0 +1,258 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Étape 1 : demande de devis en ligne
+model DevisRequest {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  devisRef  String @unique
+
+  firstName String
+  lastName  String
+  email     String
+  phone     String
+
+  villeDepart      String
+  cpDepart         String
+  etageDepart      Int
+  ascenseurDepart  Boolean
+
+  villeArrivee     String
+  cpArrivee        String
+  etageArrivee     Int
+  ascenseurArrivee Boolean
+
+  typeBien   String
+  superficie Int
+  nbPieces   Int
+
+  dateSouhaitee DateTime?
+  flexibilite   String
+  formule       String?
+
+  needDismounting Boolean @default(false)
+  needPacking     Boolean @default(false)
+  needFullPacking Boolean @default(false)
+  needCleaning    Boolean @default(false)
+  needMonteMeuble Boolean @default(false)
+  needStorage     Boolean @default(false)
+  storageDuration Int?
+
+  movingType String @default("particulier")
+
+  source      String?
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+
+  message String? @db.Text
+
+  // Statuts : pending → visited → quoted → booked → completed | cancelled
+  status String @default("pending")
+
+  rgpdAccepted Boolean
+  newsletter   Boolean @default(false)
+
+  emailSent    Boolean   @default(false)
+  visitedAt    DateTime?
+  contactedAt  DateTime?
+
+  // Étape 2 : devis remis après visite (rempli manuellement par l'équipe)
+  quote Quote?
+
+  customer   Customer? @relation(fields: [customerId], references: [id])
+  customerId String?
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+  @@map("devis_requests")
+}
+
+// Étape 3 : offre de prix saisie manuellement après la visite
+model Quote {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  quoteRef String @unique
+
+  devisRequestId String       @unique
+  devisRequest   DevisRequest @relation(fields: [devisRequestId], references: [id])
+
+  // Prix saisis manuellement par l'équipe après visite
+  totalPrice   Float
+  optionsPrice Float @default(0)
+
+  formule String
+
+  internalNotes String? @db.Text
+  assignedTo    String?
+  pdfUrl        String?
+
+  // Statuts : draft → sent → accepted | rejected | expired
+  status     String    @default("draft")
+  sentAt     DateTime?
+  acceptedAt DateTime?
+  rejectedAt DateTime?
+  expiresAt  DateTime?
+
+  booking Booking?
+
+  @@map("quotes")
+}
+
+model Customer {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  firstName String
+  lastName  String
+  email     String @unique
+  phone     String
+
+  address    String?
+  city       String?
+  postalCode String?
+
+  customerType String  @default("particulier")
+  newsletter   Boolean @default(false)
+
+  totalBookings Int   @default(0)
+  loyaltyPoints Int   @default(0)
+
+  devisRequests DevisRequest[]
+  bookings      Booking[]
+
+  @@map("customers")
+}
+
+model Booking {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  bookingRef String @unique
+
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id])
+
+  quoteId String @unique
+  quote   Quote  @relation(fields: [quoteId], references: [id])
+
+  departureAddress  String
+  departureFloor    Int?
+  departureElevator Boolean
+
+  arrivalAddress  String
+  arrivalFloor    Int?
+  arrivalElevator Boolean
+
+  movingDate     DateTime
+  movingTimeSlot String
+  formule        String
+
+  totalPrice Float
+
+  options Json?
+
+  depositPaid   Boolean   @default(false)
+  depositAmount Float?
+  depositDate   DateTime?
+
+  balancePaid  Boolean   @default(false)
+  balanceDate  DateTime?
+
+  // Statuts : confirmed → in_progress → completed | cancelled
+  status String @default("confirmed")
+
+  specialRequests String? @db.Text
+  internalNotes   String? @db.Text
+
+  reminderSent      Boolean   @default(false)
+  reminderSentAt    DateTime?
+  reviewRequestSent Boolean   @default(false)
+  reviewRequestAt   DateTime?
+
+  rating       Int?
+  feedback     String?  @db.Text
+  feedbackDate DateTime?
+
+  @@map("bookings")
+}
+
+model EmailLog {
+  id     String   @id @default(cuid())
+  sentAt DateTime @default(now())
+
+  to       String
+  subject  String
+  template String
+
+  devisRequestId String?
+  quoteId        String?
+  bookingId      String?
+
+  status       String  @default("sent")
+  errorMessage String?
+
+  @@index([template])
+  @@index([status])
+  @@map("email_logs")
+}
+
+model BlogPost {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title   String
+  slug    String @unique
+  excerpt String @db.Text
+  content String @db.Text
+
+  metaTitle       String
+  metaDescription String
+  keywords        String[]
+
+  featuredImage String?
+
+  published   Boolean   @default(false)
+  publishedAt DateTime?
+
+  category   String
+  authorName String @default("Grondin Déménagement")
+  viewCount  Int    @default(0)
+
+  @@index([slug])
+  @@index([published])
+  @@index([category])
+  @@map("blog_posts")
+}
+
+model PageView {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  path      String
+  referrer  String?
+  userAgent String?
+
+  utmSource   String?
+  utmMedium   String?
+  utmCampaign String?
+
+  @@index([path])
+  @@index([createdAt])
+  @@map("page_views")
+}

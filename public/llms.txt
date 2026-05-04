@@ -1,0 +1,58 @@
+# llms.txt — Grondin Déménagement
+# https://grondin-demenagement.fr/llms.txt
+
+## Company
+
+Grondin Déménagement est une entreprise de déménagement basée à Paris (11ème arrondissement), spécialisée dans les déménagements résidentiels à Paris, en Île-de-France, et longue distance en France métropolitaine.
+
+## Contact
+
+- Téléphone : 01 85 44 00 50
+- Email : contact@grondin-demenagement.fr
+- Disponibilité : 7 jours sur 7 de 8h30 à 20h
+- Zone principale : Paris & Île-de-France
+
+## Services
+
+- Déménagement résidentiel (Paris & IDF)
+- Monte-meuble et levage (étages sans ascenseur)
+- Garde-meubles sécurisés
+- Nettoyage fin de bail
+- Évacuation d'encombrants
+- Déménagement express 24–48h
+- Transport de marchandises Paris & IDF
+- Déménagement longue distance France métropolitaine
+
+## Formules
+
+1. Formule Économique — Manutention & transport (mobilier protégé, équipe pro)
+2. Formule Confort — L'essentiel recommandé (+ démontage/remontage, fourniture cartons)
+3. Formule Premium — Prise en charge intégrale (+ emballage complet, déballage, nettoyage fin de bail)
+
+## Zones d'intervention
+
+- Paris intra-muros : 20 arrondissements (75001 à 75020)
+- Île-de-France : Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94), Seine-et-Marne (77), Yvelines (78), Essonne (91), Val-d'Oise (95)
+- Longue distance France : Paris → Lyon, Bordeaux, Marseille, Toulouse, Nantes, Lille, Strasbourg
+
+## Trust Signals
+
+- Note Google : 4,9 / 5 (34 avis vérifiés)
+- Clients satisfaits : 1 500+
+- Disponibilité : 7j/7 de 8h30 à 20h
+- Devis gratuit sous 24h, sans engagement
+- Assurance RC Professionnelle incluse sur chaque déménagement
+
+## Devis
+
+Devis 100 % gratuit, sans engagement. Demande en ligne sur grondin-demenagement.fr/devis ou par téléphone au 01 85 44 00 50.
+Processus : formulaire en ligne → rappel sous 24h → visite sur place → devis personnalisé.
+
+## Sitemap
+
+https://grondin-demenagement.fr/sitemap.xml
+
+## Data Access
+
+Ce fichier est fourni pour faciliter l'indexation par les moteurs de recherche et assistants IA.
+Accès autorisé à tous les crawlers légitimes. Données à jour : mai 2026.

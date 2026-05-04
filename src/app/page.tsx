@@ -1,101 +1,149 @@
-import Image from "next/image";
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import { HeroSection }    from '@/components/sections/HeroSection'
+import { TrustBar }       from '@/components/sections/TrustBar'
+import { ServicesGrid }   from '@/components/sections/ServicesGrid'
+import { OffresSection }  from '@/components/sections/OffresSection'
+import { StatsSection }   from '@/components/sections/StatsSection'
+import { GoogleReviews }  from '@/components/trust/GoogleReviews'
+import { FAQSection }     from '@/components/sections/FAQSection'
+import { PartnersSection } from '@/components/sections/PartnersSection'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title:       'Déménageur Paris & Île-de-France — Grondin Déménagement',
+  description: 'Grondin Déménagement, votre expert du déménagement à Paris et en Île-de-France. Disponible 7j/7 de 8h30 à 20h. Devis gratuit en quelques clics. 1 500+ clients satisfaits.',
+  alternates:  { canonical: 'https://grondin-demenagement.fr' },
+}
+
+const FAQ_ITEMS = [
+  {
+    question: 'Comment obtenir un devis de déménagement chez Grondin ?',
+    answer:   'Obtenez votre devis gratuit en quelques clics sur notre site. Renseignez votre adresse de départ, d\'arrivée, la surface de votre logement et votre date souhaitée. Notre équipe vous recontacte rapidement avec une estimation personnalisée.',
+  },
+  {
+    question: 'Grondin Déménagement travaille-t-il le week-end ?',
+    answer:   'Oui, Grondin Déménagement est disponible 7 jours sur 7, y compris le samedi et le dimanche, de 8h30 à 20h. Nous intervenons sur Paris et toute l\'Île-de-France sans supplément week-end systématique.',
+  },
+  {
+    question: 'Quelle est la différence entre les formules Économique, Confort et Premium ?',
+    answer:   'La formule Économique inclut le personnel, la protection du mobilier et le transport. La formule Confort y ajoute le démontage et remontage du mobilier ainsi que les cartons. La formule Premium est tout-inclus : emballage des objets, déballage à destination, nettoyage fin de bail. Toutes les formules incluent l\'assurance responsabilité civile.',
+  },
+  {
+    question: 'Grondin Déménagement est-il assuré ?',
+    answer:   'Oui, Grondin Déménagement est couvert par une assurance Responsabilité Civile Professionnelle. Vos biens sont protégés pendant toute la durée du déménagement. Vous pouvez également souscrire une assurance complémentaire pour les objets de grande valeur.',
+  },
+  {
+    question: 'Comment obtenir un devis pour mon déménagement à Paris ?',
+    answer:   'Obtenez votre devis personnalisé en quelques clics via notre formulaire en ligne, ou appelez-nous directement au 01 85 44 00 50. Chaque devis est établi selon votre superficie, votre étage, la distance et vos besoins spécifiques. C\'est entièrement gratuit et sans engagement.',
+  },
+  {
+    question: 'Grondin Déménagement intervient-il dans toute l\'Île-de-France ?',
+    answer:   'Oui, Grondin Déménagement couvre l\'ensemble de l\'Île-de-France : Paris et ses 20 arrondissements, les Hauts-de-Seine (92), la Seine-Saint-Denis (93), le Val-de-Marne (94), l\'Essonne (91), les Yvelines (78), le Val-d\'Oise (95) et la Seine-et-Marne (77).',
+  },
+]
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id':   'https://grondin-demenagement.fr/#organization',
+      name:    'Grondin Déménagement',
+      url:     'https://grondin-demenagement.fr',
+      logo:    'https://grondin-demenagement.fr/images/logo-grondin.png',
+      telephone: '+33185440050',
+      email:   'contact@grondin-demenagement.fr',
+      sameAs:  [
+        'https://www.facebook.com/grondin.demenagement',
+        'https://www.linkedin.com/company/grondin-demenagement',
+      ],
+    },
+    {
+      '@type': 'LocalBusiness',
+      '@id':   'https://grondin-demenagement.fr/#localbusiness',
+      name:    'Grondin Déménagement',
+      image:   'https://grondin-demenagement.fr/images/logo-grondin.png',
+      telephone: '+33185440050',
+      email:   'contact@grondin-demenagement.fr',
+      address: {
+        '@type':         'PostalAddress',
+        addressLocality: 'Paris',
+        postalCode:      '75011',
+        addressCountry:  'FR',
+      },
+      geo: {
+        '@type':    'GeoCoordinates',
+        latitude:   48.8566,
+        longitude:  2.3522,
+      },
+      url:        'https://grondin-demenagement.fr',
+      priceRange: '€€',
+      openingHoursSpecification: [
+        {
+          '@type':    'OpeningHoursSpecification',
+          dayOfWeek:  ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
+          opens:      '08:30',
+          closes:     '20:00',
+        },
+      ],
+      aggregateRating: {
+        '@type':       'AggregateRating',
+        ratingValue:   '4.9',
+        reviewCount:   '34',
+        bestRating:    '5',
+        worstRating:   '1',
+      },
+      areaServed: [
+        { '@type': 'City',               name: 'Paris' },
+        { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name:    'Services de déménagement',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Déménagement Paris & IDF' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Monte-meuble Paris' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garde-meubles' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Nettoyage fin de bail' } },
+        ],
+      },
+    },
+  ],
+}
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <HeroSection />
+      <TrustBar />
+      <PartnersSection />
+      <ServicesGrid />
+      <StatsSection />
+      <section className="py-16 bg-neutral-50" aria-label="Nos déménagements en images">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
+          <p className="text-xs font-semibold text-grondin-500 uppercase tracking-widest text-center mb-3">Nos déménagements</p>
+          <h2 className="text-fluid-2xl font-bold text-neutral-900 text-center mb-10">Des équipes professionnelles à votre service</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image src="/images/equipe-grondin.png" alt="Équipe Grondin Déménagement en action devant le camion" fill className="object-cover" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:col-span-1">
+              <Image src="/images/demenageur-carton.png" alt="Déménageur Grondin portant un carton lors d'un déménagement à Paris" fill className="object-cover" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+              <Image src="/images/grondin-immeuble-paris.png" alt="Déménageur Grondin à l'entrée d'un immeuble parisien" fill className="object-cover" />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </section>
+      <OffresSection />
+      <GoogleReviews />
+      <FAQSection
+        items={FAQ_ITEMS}
+        title="Questions fréquentes sur nos déménagements"
+        eyebrow="FAQ"
+      />
+    </>
+  )
 }
