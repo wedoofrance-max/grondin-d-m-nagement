@@ -54,10 +54,83 @@ export const metadata: Metadata = {
   },
 }
 
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MovingCompany',
+  '@id': 'https://grondin-demenagement.fr/#business',
+  name: 'Grondin Déménagement',
+  url: 'https://grondin-demenagement.fr',
+  telephone: '+33185440050',
+  email: 'contact@grondin-demenagement.fr',
+  image: 'https://grondin-demenagement.fr/images/og-grondin-demenagement.webp',
+  description: 'Expert du déménagement à Paris et en Île-de-France. Disponible 7j/7 de 8h30 à 20h. Devis gratuit. 4,9/5 sur Google.',
+  priceRange: '€€',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '08:30',
+      closes: '20:00',
+    },
+  ],
+  areaServed: [
+    { '@type': 'City', name: 'Paris', sameAs: 'https://www.wikidata.org/wiki/Q90' },
+    { '@type': 'City', name: 'Boulogne-Billancourt' },
+    { '@type': 'City', name: 'Versailles' },
+    { '@type': 'City', name: 'Neuilly-sur-Seine' },
+    { '@type': 'City', name: 'Vincennes' },
+    { '@type': 'City', name: 'Nanterre' },
+    { '@type': 'City', name: 'Montreuil' },
+    { '@type': 'City', name: 'Saint-Denis' },
+    { '@type': 'City', name: 'Créteil' },
+    { '@type': 'City', name: 'Asnières-sur-Seine' },
+    { '@type': 'City', name: 'Colombes' },
+    { '@type': 'City', name: 'Levallois-Perret' },
+    { '@type': 'City', name: 'Courbevoie' },
+    { '@type': 'City', name: 'Issy-les-Moulineaux' },
+    { '@type': 'City', name: 'Ivry-sur-Seine' },
+    { '@type': 'AdministrativeArea', name: 'Île-de-France', sameAs: 'https://www.wikidata.org/wiki/Q13917' },
+  ],
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '48.85661',
+    longitude: '2.35222',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    reviewCount: '34',
+    bestRating: '5',
+    worstRating: '1',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Services de déménagement',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Déménagement Paris & Île-de-France', url: 'https://grondin-demenagement.fr/services/demenagement-paris' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Monte-meuble & Levage', url: 'https://grondin-demenagement.fr/services/monte-meubles-paris' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garde-meubles Île-de-France', url: 'https://grondin-demenagement.fr/services/garde-meubles' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Nettoyage fin de bail', url: 'https://grondin-demenagement.fr/services/nettoyage-demenagement-paris' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Évacuation encombrants', url: 'https://grondin-demenagement.fr/services/encombrement-nettoyage-paris' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Déménagement express 24h', url: 'https://grondin-demenagement.fr/services/demenagement-express-paris' } },
+    ],
+  },
+  sameAs: [
+    'https://g.page/r/grondin-demenagement/review',
+    'https://www.facebook.com/grondin.demenagement',
+    'https://www.linkedin.com/company/grondin-demenagement',
+  ],
+  parentOrganization: { '@id': 'https://grondin-demenagement.fr/#organization' },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={inter.variable}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://api.iconify.design" />

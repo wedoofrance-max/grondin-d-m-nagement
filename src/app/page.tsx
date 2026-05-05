@@ -49,70 +49,18 @@ const FAQ_ITEMS = [
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id':   'https://grondin-demenagement.fr/#organization',
-      name:    'Grondin Déménagement',
-      url:     'https://grondin-demenagement.fr',
-      logo:    'https://grondin-demenagement.fr/images/logo-grondin.png',
-      telephone: '+33185440050',
-      email:   'contact@grondin-demenagement.fr',
-      sameAs:  [
-        'https://www.facebook.com/grondin.demenagement',
-        'https://www.linkedin.com/company/grondin-demenagement',
-      ],
-    },
-    {
-      '@type': 'LocalBusiness',
-      '@id':   'https://grondin-demenagement.fr/#localbusiness',
-      name:    'Grondin Déménagement',
-      image:   'https://grondin-demenagement.fr/images/logo-grondin.png',
-      telephone: '+33185440050',
-      email:   'contact@grondin-demenagement.fr',
-      address: {
-        '@type':         'PostalAddress',
-        addressLocality: 'Paris',
-        postalCode:      '75011',
-        addressCountry:  'FR',
-      },
-      geo: {
-        '@type':    'GeoCoordinates',
-        latitude:   48.8566,
-        longitude:  2.3522,
-      },
-      url:        'https://grondin-demenagement.fr',
-      priceRange: '€€',
-      openingHoursSpecification: [
-        {
-          '@type':    'OpeningHoursSpecification',
-          dayOfWeek:  ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
-          opens:      '08:30',
-          closes:     '20:00',
-        },
-      ],
-      aggregateRating: {
-        '@type':       'AggregateRating',
-        ratingValue:   '4.9',
-        reviewCount:   '34',
-        bestRating:    '5',
-        worstRating:   '1',
-      },
-      areaServed: [
-        { '@type': 'City',               name: 'Paris' },
-        { '@type': 'AdministrativeArea', name: 'Île-de-France' },
-      ],
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name:    'Services de déménagement',
-        itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Déménagement Paris & IDF' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Monte-meuble Paris' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Garde-meubles' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Nettoyage fin de bail' } },
-        ],
-      },
-    },
+  '@type': 'Organization',
+  '@id':   'https://grondin-demenagement.fr/#organization',
+  name:    'Grondin Déménagement',
+  url:     'https://grondin-demenagement.fr',
+  logo:    'https://grondin-demenagement.fr/images/logo-grondin.png',
+  image:   'https://grondin-demenagement.fr/images/og-grondin-demenagement.webp',
+  telephone: '+33185440050',
+  email:   'contact@grondin-demenagement.fr',
+  sameAs:  [
+    'https://www.facebook.com/grondin.demenagement',
+    'https://www.linkedin.com/company/grondin-demenagement',
+    'https://g.page/r/grondin-demenagement/review',
   ],
 }
 
