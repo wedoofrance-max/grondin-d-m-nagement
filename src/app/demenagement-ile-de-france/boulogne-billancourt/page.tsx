@@ -68,9 +68,23 @@ export default function DemenagementBoulogneBillancourtPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Boulogne-Billancourt concentre une grande diversité de logements : immeubles modernes avec accès digicode et monte-charge, résidences de standing aux halls étroits, maisons de ville et pavillons dans les rues calmes autour du Parc de Saint-Cloud. Chaque déménagement nécessite une organisation précise pour garantir la protection des meubles et le respect des parties communes.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement réalise une visite gratuite à votre domicile pour dresser un inventaire complet et identifier les contraintes d'accès. Le devis vous est transmis sous 24h, sans engagement. Le jour J, nos équipes arrivent avec le matériel de protection adapté : couvertures de déménagement, sangles, monte-meubles si nécessaire.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts à Boulogne-Billancourt</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Point du Jour', 'Silly-Gallieni', 'Les Pins', 'Escuyer', 'Marcel Sembat', 'Reine', 'Billancourt', 'Trapèze'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Zone à Faibles Émissions (ZFE)</p>
+              <p className="text-xs text-amber-700">Boulogne-Billancourt est en ZFE Grand Paris. Nos camions sont conformes Crit'Air 1 et 2 pour circuler sans restriction dans la commune et vers Paris intra-muros.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

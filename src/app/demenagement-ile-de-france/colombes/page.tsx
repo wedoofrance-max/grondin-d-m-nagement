@@ -68,9 +68,23 @@ export default function DemenagementColombesPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Colombes propose une variété de logements allant des appartements dans des immeubles collectifs des années 1960-80 aux maisons individuelles et pavillons avec jardins. Les déménagements de maison demandent généralement un volume plus important et une organisation plus poussée que les appartements, avec souvent des caves ou garages à vider en plus des pièces à vivre.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous accompagne avec une visite préalable gratuite pour estimer le volume exact, identifier les contraintes d'accès et vous proposer le matériel adapté. Nous gérons l'ensemble du déménagement de A à Z, couvert par notre assurance RC Professionnelle.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts à Colombes</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Petit-Colombes', 'Centre-ville', 'Fossé-Jean', 'La Garenne', 'Zone des Vallons', 'Le Plateau', 'Bord-de-Seine', 'Les Fossés-Jean'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Colombes (92700)</p>
+              <p className="text-xs text-blue-700">À 15 km au nord-ouest de Paris, desserte RER C (gare de Colombes) et Transilien L. Nombreuses maisons pavillonnaires avec accès direct sur rue — nous adaptons la taille du camion et l'équipe au volume.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

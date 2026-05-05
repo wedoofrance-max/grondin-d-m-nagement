@@ -106,8 +106,8 @@ export function HeroSection() {
             variants={fadeUp}
             className="text-fluid-5xl font-extrabold text-white leading-[1.06] tracking-tight max-w-3xl"
           >
-            Le déménageur{' '}
-            de confiance
+            Déménageur Paris{' '}
+            & Île-de-France
           </motion.h1>
 
           {/* Tagline */}

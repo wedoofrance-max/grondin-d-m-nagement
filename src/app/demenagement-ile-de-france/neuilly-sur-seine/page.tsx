@@ -68,9 +68,23 @@ export default function DemenagementNeuillyPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               À Neuilly-sur-Seine, les logements sont souvent spacieux et bien équipés : double parking souterrain, ascenseurs de grande dimension, couloirs larges. Mais certaines résidences imposent des créneaux horaires stricts, un accès restreint aux monte-charges, ou la présence obligatoire d'un protège-ascenseur fourni par le déménageur. Grondin Déménagement prend en compte toutes ces contraintes dès la phase de devis.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Nous effectuons une visite à domicile pour dresser l'inventaire complet, identifier le mobilier nécessitant un emballage spécifique (œuvres d'art, objets fragiles, meubles anciens) et vous proposer la formule la mieux adaptée. Chaque intervention est couverte par notre assurance RC Professionnelle.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts à Neuilly-sur-Seine</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Bagatelle', 'Anatole France', 'Les Sablons', 'Maillot', 'Pont de Neuilly', 'Roule', 'Centre-ville', 'Bois de Boulogne'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Résidences de prestige — protocole gardien</p>
+              <p className="text-xs text-amber-700">Limitrophe du 17ème arrondissement de Paris. Métro L1 (Pont de Neuilly, Les Sablons). Nos équipes prennent contact avec les garderies en amont pour respecter les créneaux de livraison et les exigences de protection des parties communes.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

@@ -69,9 +69,23 @@ export default function DemenagementVersaillesPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               La ville de Versailles propose un habitat diversifié : appartements avec hauts plafonds dans les immeubles classés du quartier Notre-Dame, pavillons avec sous-sol et garage dans les zones résidentielles de Porchefontaine ou Jussieu, et résidences plus récentes autour de la gare Versailles-Chantiers. Chaque logement demande une approche spécifique pour protéger meubles et parquets.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement intervient à Versailles avec une visite gratuite préalable pour établir un devis précis. Nous gérons les autorisations de stationnement si nécessaire et adaptons nos horaires pour limiter l'impact sur votre voisinage. Notre assurance RC Professionnelle couvre l'intégralité du déménagement.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts à Versailles</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Saint-Louis', 'Notre-Dame', 'Montreuil', 'Porchefontaine', 'Jussieu', 'Chesnay-Rocquencourt', 'Clagny-Glatigny', 'Le Plateau'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Versailles (78000)</p>
+              <p className="text-xs text-blue-700">À 25 km de Paris. Accès par A13 ou N118. Desserte RER C (Versailles-Chantiers, Versailles-Rive-Droite, Versailles-Rive-Gauche). Centre historique avec axes touristiques : nous planifions les horaires d'intervention pour éviter les pics de circulation.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

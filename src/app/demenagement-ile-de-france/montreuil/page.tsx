@@ -68,9 +68,23 @@ export default function DemenagementMontreuillPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Montreuil présente une grande variété de logements : maisons de ville avec jardins dans le vieux Montreuil, appartements récents dans les résidences neuves du quartier Boissière-Acacia, lofts et espaces atypiques dans le secteur des ateliers. Cette diversité demande une équipe flexible et bien équipée pour s'adapter à chaque situation.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Nous effectuons une visite préalable pour anticiper les difficultés d'accès, choisir le bon véhicule et vous proposer une formule adaptée. Notre devis est gratuit et vous est remis sous 24h. Le jour J, nos déménageurs protègent sol et murs des parties communes et travaillent méthodiquement pour un déménagement serein.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts à Montreuil</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Vieux Montreuil', 'Boissière-Acacia', 'Branly', 'Bel-Air', 'Villiers-Barbusse', 'Signac', 'La Noue', 'Grands Pêchers'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Montreuil (93100)</p>
+              <p className="text-xs text-blue-700">Limitrophe du 20ème arrondissement de Paris. Métro L9 (Mairie de Montreuil, Croix de Chavaux) et L11 (Robespierre). Secteur des ateliers avec lofts et espaces atypiques — nos équipes s'adaptent aux volumes et configurations non standard.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

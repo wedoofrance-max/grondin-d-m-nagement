@@ -68,9 +68,23 @@ export default function DemenagementVincennesPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Les logements vincennois sont principalement des appartements dans des immeubles collectifs de bonne facture, ainsi que quelques maisons individuelles dans les rues calmes à l'est de la ville. Les immeubles du centre historique disposent souvent d'escaliers en pierre et d'ascenseurs plus petits, ce qui demande une planification rigoureuse pour les pièces volumineuses.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement organise une visite gratuite pour évaluer votre situation et vous remettre un devis personnalisé. Nous nous occupons des formalités auprès du syndic si votre immeuble l'exige, et intervenons avec une équipe dimensionnée à votre volume.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts à Vincennes</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Fontenay-sous-Bois côté Vincennes', 'Avenue de Paris', 'Château de Vincennes', 'Bois de Vincennes', 'Saint-Louis', 'Les Lacs'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Vincennes (94300)</p>
+              <p className="text-xs text-blue-700">Limitrophe du 12ème arrondissement de Paris. Métro L1 (Château de Vincennes, terminus). Val-de-Marne (94). Nombreux immeubles avec couloirs étroits — notre monte-meubles est systématiquement disponible sur demande.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[
