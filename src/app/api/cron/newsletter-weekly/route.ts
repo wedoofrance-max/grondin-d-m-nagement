@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from 'next/server'
 import { sendBatchEmails } from '@/lib/email/nodemailer'
 import { getNewsletterWeeklyHTML } from '@/lib/email/templates/newsletterWeekly'

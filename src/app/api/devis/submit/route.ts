@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic'
 import { NextRequest, NextResponse } from 'next/server'
 import { DevisSchema } from '@/lib/validations'
 import { sendDevisConfirmation, sendDevisNotification, type DevisEmailData } from '@/lib/email'
