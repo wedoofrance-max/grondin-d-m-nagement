@@ -1,6 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import { HeroSection }    from '@/components/sections/HeroSection'
+import dynamic from 'next/dynamic'
+
+const HeroSection = dynamic(
+  () => import('@/components/sections/HeroSection').then(m => ({ default: m.HeroSection })),
+  { ssr: true }
+)
 import { TrustBar }       from '@/components/sections/TrustBar'
 import { ServicesGrid }   from '@/components/sections/ServicesGrid'
 import { OffresSection }  from '@/components/sections/OffresSection'
