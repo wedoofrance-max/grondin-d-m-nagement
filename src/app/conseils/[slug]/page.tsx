@@ -12,12 +12,16 @@ const ARTICLES: Record<string, {
   content: { heading: string; body: string }[]
   tag: string
   readTime: string
+  datePublished: string
+  dateModified: string
 }> = {
   'checklist-demenagement-paris': {
-    title:       'La checklist complète pour réussir votre déménagement à Paris',
-    description: 'Tout ce que vous devez faire avant, pendant et après votre déménagement à Paris. Checklist complète par Grondin Déménagement.',
-    tag:         'Organisation',
-    readTime:    '8 min',
+    title:         'La checklist complète pour réussir votre déménagement à Paris',
+    description:   'Tout ce que vous devez faire avant, pendant et après votre déménagement à Paris. Checklist complète par Grondin Déménagement.',
+    tag:           'Organisation',
+    readTime:      '8 min',
+    datePublished: '2024-09-15',
+    dateModified:  '2026-05-01',
     content: [
       {
         heading: '2 mois avant le déménagement',
@@ -42,10 +46,12 @@ const ARTICLES: Record<string, {
     ],
   },
   'comment-bien-emballer-ses-affaires': {
-    title:       'Comment bien emballer ses affaires pour un déménagement ?',
-    description: 'Techniques professionnelles pour emballer vos objets fragiles, vaisselle, vêtements et électronique. Guide par Grondin Déménagement.',
-    tag:         'Emballage',
-    readTime:    '6 min',
+    title:         'Comment bien emballer ses affaires pour un déménagement ?',
+    description:   'Techniques professionnelles pour emballer vos objets fragiles, vaisselle, vêtements et électronique. Guide par Grondin Déménagement.',
+    tag:           'Emballage',
+    readTime:      '6 min',
+    datePublished: '2024-10-01',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Le matériel indispensable',
@@ -74,6 +80,8 @@ const ARTICLES: Record<string, {
     description: 'Guide pratique pour réserver une place de stationnement pour votre camion de déménagement à Paris.',
     tag:         'Réglementation',
     readTime:    '5 min',
+    datePublished: '2024-10-15',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'Pourquoi est-ce nécessaire ?',
@@ -98,6 +106,8 @@ const ARTICLES: Record<string, {
     description: 'Comment gérer les contraintes des immeubles haussmanniens lors d\'un déménagement à Paris : escaliers, couloirs, monte-meubles.',
     tag:         'Logistique',
     readTime:    '7 min',
+    datePublished: '2024-11-01',
+    dateModified:  '2026-04-20',
     content: [
       {
         heading: 'Les spécificités des immeubles haussmanniens',
@@ -122,6 +132,8 @@ const ARTICLES: Record<string, {
     description: 'Guide complet pour organiser un déménagement longue distance Paris-Lyon, Paris-Bordeaux ou vers toute autre ville de France.',
     tag:         'Longue distance',
     readTime:    '9 min',
+    datePublished: '2024-11-15',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Planifier plus tôt que pour un déménagement local',
@@ -150,6 +162,8 @@ const ARTICLES: Record<string, {
     description: 'Liste complète de tous les organismes à prévenir après un déménagement et comment le faire facilement.',
     tag:         'Administratif',
     readTime:    '10 min',
+    datePublished: '2024-12-01',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'Utiliser le service en ligne',
@@ -178,6 +192,8 @@ const ARTICLES: Record<string, {
     description: 'État des lieux de sortie, nettoyage fin de bail, petites réparations : tout pour récupérer votre dépôt de garantie.',
     tag:         'Locataire',
     readTime:    '7 min',
+    datePublished: '2024-12-15',
+    dateModified:  '2026-04-20',
     content: [
       {
         heading: 'Comprendre le dépôt de garantie',
@@ -206,6 +222,8 @@ const ARTICLES: Record<string, {
     description: 'Comment impliquer vos enfants dans le déménagement et gérer ce changement pour toute la famille.',
     tag:         'Famille',
     readTime:    '6 min',
+    datePublished: '2025-01-10',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Annoncer le déménagement',
@@ -234,6 +252,8 @@ const ARTICLES: Record<string, {
     description: 'Toutes les étapes d\'un déménagement parisien réussi : trouver le bon déménageur, organiser la logistique, gérer les formalités.',
     tag:         'Guide',
     readTime:    '10 min',
+    datePublished: '2025-01-20',
+    dateModified:  '2026-05-01',
     content: [
       {
         heading: 'Étape 1 : évaluer son volume et ses besoins',
@@ -266,6 +286,8 @@ const ARTICLES: Record<string, {
     description: 'Distance, volume, étage, formule, période : comprendre les facteurs qui déterminent le coût d\'un déménagement à Paris pour mieux budgéter.',
     tag:         'Budget',
     readTime:    '7 min',
+    datePublished: '2025-02-01',
+    dateModified:  '2026-05-01',
     content: [
       {
         heading: 'Le volume à transporter',
@@ -298,6 +320,8 @@ const ARTICLES: Record<string, {
     description: 'Estimation du nombre de cartons nécessaires pour déménager selon la taille du logement : studio, T2, T3, T4 et maison.',
     tag:         'Emballage',
     readTime:    '5 min',
+    datePublished: '2025-02-15',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Studio ou T1 (20 à 35 m²)',
@@ -326,6 +350,8 @@ const ARTICLES: Record<string, {
     description: 'Tous les contrats à résilier ou transférer lors d\'un déménagement : internet, énergie, eau, assurance, téléphonie.',
     tag:         'Administratif',
     readTime:    '6 min',
+    datePublished: '2025-03-01',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'Énergie : électricité et gaz',
@@ -354,6 +380,8 @@ const ARTICLES: Record<string, {
     description: 'Les aides disponibles pour financer votre déménagement : Mobili-Pass, aide CAF, aides régionales et dispositifs pour les salariés.',
     tag:         'Budget',
     readTime:    '8 min',
+    datePublished: '2025-03-15',
+    dateModified:  '2026-04-20',
     content: [
       {
         heading: 'L\'aide Mobili-Pass d\'Action Logement',
@@ -382,6 +410,8 @@ const ARTICLES: Record<string, {
     description: 'Tous les conseils pour déménager à Paris en tant qu\'étudiant : trouver un logement, optimiser son budget et s\'organiser.',
     tag:         'Étudiant',
     readTime:    '6 min',
+    datePublished: '2025-04-01',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Anticiper la recherche de logement',
@@ -410,6 +440,8 @@ const ARTICLES: Record<string, {
     description: 'Guide du déménagement pour les seniors : aides disponibles, formule tout compris, organisation et sécurité.',
     tag:         'Senior',
     readTime:    '7 min',
+    datePublished: '2025-04-15',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'Pourquoi déménager après 60 ans nécessite plus de préparation',
@@ -438,6 +470,8 @@ const ARTICLES: Record<string, {
     description: 'RC professionnelle, assurance tous risques, franchise et déclaration de dommages : tout savoir sur les assurances lors d\'un déménagement.',
     tag:         'Juridique',
     readTime:    '6 min',
+    datePublished: '2025-05-01',
+    dateModified:  '2026-04-20',
     content: [
       {
         heading: 'La RC Professionnelle du déménageur',
@@ -466,6 +500,8 @@ const ARTICLES: Record<string, {
     description: 'Conseils pour déménager en hiver à Paris : avantages pratiques, précautions à prendre et organisation.',
     tag:         'Saisonnier',
     readTime:    '5 min',
+    datePublished: '2025-05-15',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Les avantages d\'un déménagement en hiver',
@@ -490,6 +526,8 @@ const ARTICLES: Record<string, {
     description: 'Guide des quartiers parisiens : Le Marais, Batignolles, Oberkampf, Montmartre, République — quel quartier correspond à votre style de vie ?',
     tag:         'Paris',
     readTime:    '8 min',
+    datePublished: '2025-06-01',
+    dateModified:  '2026-05-01',
     content: [
       {
         heading: 'Le Marais (3ème et 4ème) : culture et vie nocturne',
@@ -518,6 +556,8 @@ const ARTICLES: Record<string, {
     description: 'Astuces pour réduire le coût de son déménagement parisien : volume, timing, cartons gratuits et alternatives économiques.',
     tag:         'Budget',
     readTime:    '7 min',
+    datePublished: '2025-06-15',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'Réduire le volume avant de déménager',
@@ -546,6 +586,8 @@ const ARTICLES: Record<string, {
     description: 'Guide du garde-meubles parisien : quand en avoir besoin, comment choisir, et conseils pour une utilisation optimale.',
     tag:         'Stockage',
     readTime:    '6 min',
+    datePublished: '2025-07-01',
+    dateModified:  '2026-04-20',
     content: [
       {
         heading: 'Quand le garde-meubles est-il utile ?',
@@ -574,6 +616,8 @@ const ARTICLES: Record<string, {
     description: 'Comment transporter un piano droit, un piano à queue ou une oeuvre d\'art lors d\'un déménagement : méthodes professionnelles et précautions.',
     tag:         'Objets précieux',
     readTime:    '6 min',
+    datePublished: '2025-07-15',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Le piano droit : lourd et fragile à la fois',
@@ -602,6 +646,8 @@ const ARTICLES: Record<string, {
     description: 'Techniques d\'emballage professionnel pour vaisselle fine, miroirs, lampes et appareils électroniques lors d\'un déménagement.',
     tag:         'Emballage',
     readTime:    '5 min',
+    datePublished: '2025-08-01',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'La vaisselle fine',
@@ -630,6 +676,8 @@ const ARTICLES: Record<string, {
     description: 'Comment préparer, transporter et réacclimater ses plantes lors d\'un déménagement à Paris.',
     tag:         'Conseils',
     readTime:    '5 min',
+    datePublished: '2025-08-15',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Préparer les plantes avant le déménagement',
@@ -654,6 +702,8 @@ const ARTICLES: Record<string, {
     description: 'Conseils pour gérer le stress de votre animal lors d\'un déménagement parisien et vérifier la réglementation des copropriétés.',
     tag:         'Animaux',
     readTime:    '6 min',
+    datePublished: '2025-09-01',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'Les chats : isoler et rassurer',
@@ -682,6 +732,8 @@ const ARTICLES: Record<string, {
     description: 'Conseils pour déménager de manière écologique à Paris : cartons recyclés, emballages durables, dons et optimisation du transport.',
     tag:         'Écologie',
     readTime:    '6 min',
+    datePublished: '2025-09-15',
+    dateModified:  '2026-04-20',
     content: [
       {
         heading: 'Privilégier les cartons de seconde main',
@@ -710,6 +762,8 @@ const ARTICLES: Record<string, {
     description: 'Tout ce qu\'il faut savoir pour bien organiser un déménagement le week-end à Paris : disponibilités, autorisation de stationnement et logistique.',
     tag:         'Organisation',
     readTime:    '5 min',
+    datePublished: '2025-10-01',
+    dateModified:  '2026-04-10',
     content: [
       {
         heading: 'Pourquoi le week-end est le créneau le plus demandé',
@@ -734,6 +788,8 @@ const ARTICLES: Record<string, {
     description: 'Fonctionnement du monte-meubles, situations où il est indispensable et déroulement de l\'opération lors d\'un déménagement parisien.',
     tag:         'Équipement',
     readTime:    '5 min',
+    datePublished: '2025-10-15',
+    dateModified:  '2026-04-15',
     content: [
       {
         heading: 'Qu\'est-ce qu\'un monte-meubles ?',
@@ -786,11 +842,22 @@ export default function ConseilArticlePage({ params }: Props) {
     '@type': 'Article',
     headline: article.title,
     description: article.description,
-    publisher: {
+    url: `https://grondin-demenagement.fr/conseils/${params.slug}`,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    image: 'https://grondin-demenagement.fr/images/og-grondin-demenagement.webp',
+    author: {
       '@type': 'Organization',
       name: 'Grondin Déménagement',
       url: 'https://grondin-demenagement.fr',
     },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Grondin Déménagement',
+      url: 'https://grondin-demenagement.fr',
+      logo: { '@type': 'ImageObject', url: 'https://grondin-demenagement.fr/images/logo-grondin.png' },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://grondin-demenagement.fr/conseils/${params.slug}` },
   }
 
   return (
@@ -807,7 +874,7 @@ export default function ConseilArticlePage({ params }: Props) {
             { label: 'Conseils', href: '/conseils' },
             { label: article.tag },
           ]} />
-          <div className="flex items-center gap-3 mt-4 mb-3">
+          <div className="flex flex-wrap items-center gap-3 mt-4 mb-3">
             <span className="px-3 py-1 bg-grondin-700 text-grondin-200 text-xs font-semibold rounded-full">
               {article.tag}
             </span>
@@ -815,6 +882,13 @@ export default function ConseilArticlePage({ params }: Props) {
               <Icon icon="ph:clock" width={14} height={14} aria-hidden />
               {article.readTime} de lecture
             </span>
+            <span className="text-white/50 text-sm flex items-center gap-1">
+              <Icon icon="ph:pencil-simple" width={14} height={14} aria-hidden />
+              Équipe Grondin Déménagement
+            </span>
+            <time dateTime={article.dateModified} className="text-white/40 text-xs">
+              Mis à jour le {new Date(article.dateModified).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+            </time>
           </div>
           <h1 className="text-fluid-3xl font-extrabold text-white max-w-3xl">
             {article.title}
