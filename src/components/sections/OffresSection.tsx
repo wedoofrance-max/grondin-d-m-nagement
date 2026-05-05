@@ -62,7 +62,7 @@ export function OffresSection() {
     <section className="py-20 bg-white" aria-label="Nos formules de déménagement">
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div className="text-center mb-16">
-          <p className="text-grondin-500 text-xs font-semibold uppercase tracking-widest mb-3">
+          <p className="text-grondin-700 text-xs font-semibold uppercase tracking-widest mb-3">
             Formules
           </p>
           <h2 className="text-fluid-4xl font-bold text-neutral-900 mb-4">
@@ -81,7 +81,7 @@ export function OffresSection() {
 
         <p className="text-center text-sm text-neutral-500 mt-8">
           Chaque devis est personnalisé selon votre superficie, étage, et besoins spécifiques.{' '}
-          <a href="/devis" className="text-grondin-500 hover:underline font-medium">
+          <a href="/devis" className="text-grondin-700 hover:underline font-medium">
             Obtenez votre devis gratuit →
           </a>
         </p>

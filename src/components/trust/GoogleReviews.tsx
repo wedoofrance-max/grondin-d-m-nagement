@@ -11,7 +11,7 @@ const REVIEWS = [
 
 function Stars({ count }: { count: number }) {
   return (
-    <div className="flex gap-0.5" aria-label={`Note : ${count} étoiles sur 5`}>
+    <div role="img" className="flex gap-0.5" aria-label={`Note : ${count} étoiles sur 5`}>
       {Array.from({ length: 5 }).map((_, i) => (
         <Icon
           key={i}
@@ -32,7 +32,7 @@ export function GoogleReviews() {
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="text-grondin-500 text-xs font-semibold uppercase tracking-widest mb-3">
+            <p className="text-grondin-700 text-xs font-semibold uppercase tracking-widest mb-3">
               Recommandations
             </p>
             <h2 className="text-fluid-4xl font-bold text-neutral-900">
@@ -66,7 +66,7 @@ export function GoogleReviews() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-neutral-900">{review.author}</p>
-                    <p className="text-xs text-neutral-400">{review.city}</p>
+                    <p className="text-xs text-neutral-600">{review.city}</p>
                   </div>
                 </div>
                 <Stars count={review.rating} />

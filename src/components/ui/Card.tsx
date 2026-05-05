@@ -22,7 +22,7 @@ export function ServiceCard({ icon, title, description, href, badge, className }
       className
     )}>
       {badge && (
-        <span className="absolute top-4 right-4 px-2 py-0.5 text-xs font-semibold text-white bg-grondin-500 rounded-full">
+        <span className="absolute top-4 right-4 px-2 py-0.5 text-xs font-semibold text-white bg-grondin-700 rounded-full">
           {badge}
         </span>
       )}
@@ -43,7 +43,7 @@ export function ServiceCard({ icon, title, description, href, badge, className }
           {description}
         </p>
       </div>
-      <div className="mt-auto flex items-center gap-1.5 text-grondin-500 font-medium text-sm">
+      <div className="mt-auto flex items-center gap-1.5 text-grondin-700 font-medium text-sm">
         <span>En savoir plus</span>
         <Icon
           icon="ph:arrow-right"
@@ -83,7 +83,7 @@ export function OffreCard({ name, tagline, recommended, features, notIncluded, h
       <div className="flex flex-col gap-1">
         <p className={cn(
           'text-xs font-semibold tracking-widest uppercase',
-          recommended ? 'text-grondin-300' : 'text-grondin-500'
+          recommended ? 'text-grondin-300' : 'text-grondin-700'
         )}>
           {tagline}
         </p>

@@ -56,7 +56,7 @@ export function PartnersSection() {
   return (
     <section className="py-14 bg-white border-y border-neutral-100" aria-label="Nos partenaires">
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
-        <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest text-center mb-8">
+        <p className="text-xs font-semibold text-neutral-600 uppercase tracking-widest text-center mb-8">
           Ils nous font confiance
         </p>
         <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 lg:gap-x-16">

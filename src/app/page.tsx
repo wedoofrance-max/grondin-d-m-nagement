@@ -127,7 +127,7 @@ export default function HomePage() {
       <StatsSection />
       <section className="py-16 bg-neutral-50" aria-label="Nos déménagements en images">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
-          <p className="text-xs font-semibold text-grondin-500 uppercase tracking-widest text-center mb-3">Nos déménagements</p>
+          <p className="text-xs font-semibold text-grondin-700 uppercase tracking-widest text-center mb-3">Nos déménagements</p>
           <h2 className="text-fluid-2xl font-bold text-neutral-900 text-center mb-10">Des équipes professionnelles à votre service</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">

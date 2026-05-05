@@ -25,7 +25,7 @@ export function FAQSection({
     <section className="py-20 bg-neutral-50" aria-label="Questions fréquentes">
       <div className="max-w-3xl mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
-          <p className="text-grondin-500 text-xs font-semibold uppercase tracking-widest mb-3">
+          <p className="text-grondin-700 text-xs font-semibold uppercase tracking-widest mb-3">
             {eyebrow}
           </p>
           <h2 className="text-fluid-4xl font-bold text-neutral-900">{title}</h2>

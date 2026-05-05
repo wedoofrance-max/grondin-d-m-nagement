@@ -60,6 +60,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preconnect" href="https://api.iconify.design" />
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-demenagement-paris.webp"
+          fetchPriority="high"
+        />
         {/* Géolocalisation */}
         <meta name="geo.region"    content="FR-IDF" />
         <meta name="geo.placename" content="Paris, Île-de-France" />
@@ -75,16 +82,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="ai-availability" content="7j/7 8h30-20h · Devis gratuit sans engagement · Réponse sous 24h" />
       </head>
       <body className="font-sans antialiased bg-white">
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-        `}</Script>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="gtag-init" strategy="afterInteractive">{`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+            `}</Script>
+          </>
+        )}
         <ToastProvider>
           <a href="#main-content" className="skip-link">Aller au contenu principal</a>
           <Header />
