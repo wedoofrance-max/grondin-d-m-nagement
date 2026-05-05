@@ -107,8 +107,7 @@ export function HeroSection() {
             className="text-fluid-5xl font-extrabold text-white leading-[1.06] tracking-tight max-w-3xl"
           >
             Le déménageur{' '}
-            <em className="not-italic text-grondin-400">parisien</em>
-            {' '}de confiance
+            de confiance
           </motion.h1>
 
           {/* Tagline */}

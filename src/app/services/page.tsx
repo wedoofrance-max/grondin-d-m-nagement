@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const SERVICES = [
   {
     icon:        'ph:house-line',
-    title:       'Déménagement Paris',
+    title:       'Déménagement',
     description: 'Déménagement résidentiel dans tous les arrondissements de Paris. Équipes expérimentées, véhicules adaptés, assurance incluse.',
     href:        '/services/demenagement-paris',
   },

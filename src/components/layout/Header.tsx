@@ -14,7 +14,7 @@ const navLinks: NavLink[] = [
     label: 'Services',
     href:  '/services',
     sub: [
-      { label: 'Déménagement Paris',     href: '/services/demenagement-paris',             icon: 'ph:truck' },
+      { label: 'Déménagement',            href: '/services/demenagement-paris',             icon: 'ph:truck' },
       { label: 'Monte-meuble',           href: '/services/monte-meubles-paris',            icon: 'ph:elevator' },
       { label: 'Garde-meubles',          href: '/services/garde-meubles',                  icon: 'ph:warehouse' },
       { label: 'Nettoyage',              href: '/services/nettoyage-demenagement-paris',   icon: 'ph:broom' },

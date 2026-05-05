@@ -70,7 +70,7 @@ export default function DemenagementParisServicePage() {
             { label: 'Déménagement Paris' },
           ]} />
           <h1 className="text-fluid-4xl font-extrabold text-white mt-4 mb-3">
-            Déménageur à Paris — Expert 7j/7
+            Déménagement à Paris & Île-de-France
           </h1>
           <p className="text-white/70 text-fluid-lg max-w-2xl">
             Grondin Déménagement intervient dans tous les 20 arrondissements de Paris. Équipes professionnelles, devis gratuit, disponibles dès demain.
