@@ -36,7 +36,21 @@ export default function DemenagementParis11emeArrPage() {
           <div className="lg:col-span-2">
             <h2 className="text-fluid-2xl font-bold text-neutral-900 mb-4">Votre déménageur dans le 11ème arrondissement</h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 11ème arrondissement, autour de la Bastille et d'Oberkampf, est l'un des arrondissements les plus animés de Paris. Il attire de nombreux ménages grâce à ses appartements spacieux et ses nombreux commerces de quartier.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Dans le 11ème, les grandes artères facilitent l'accès des camions mais les rues secondaires peuvent être étroites. Demandez votre devis gratuit, notre conseiller vous rappelle sous 24h.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Dans le 11ème, les grandes artères facilitent l'accès des camions mais les rues secondaires peuvent être étroites. Demandez votre devis gratuit, notre conseiller vous rappelle sous 24h.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Bastille', 'Nation', 'Oberkampf', 'Roquette', 'Voltaire', 'Saint-Ambroise', 'Popincourt'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Paris 11ème — Code postal 75011</p>
+              <p className="text-xs text-blue-700">Arrondissement très résidentiel, l'un des plus peuplés de Paris. Forte densité d'appartements avec escaliers étroits. Rues souvent à sens unique avec stationnement difficile — nous organisons un point de dépose-chargement optimisé pour minimiser le temps de portage.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[{ icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h' }, { icon: 'ph:shield-check', title: 'Assurance incluse', desc: 'RC Professionnelle' }, { icon: 'ph:star-fill', title: '4,9/5 sur Google', desc: '34 avis vérifiés' }, { icon: 'ph:users', title: '1 500+ clients', desc: 'Paris et IDF' }].map((item) => (
                 <div key={item.title} className="flex items-start gap-3 p-4 bg-grondin-50 rounded-xl"><Icon icon={item.icon} width={20} height={20} className="text-grondin-500 flex-shrink-0 mt-0.5" aria-hidden /><div><p className="font-semibold text-neutral-900 text-sm">{item.title}</p><p className="text-xs text-neutral-600">{item.desc}</p></div></div>

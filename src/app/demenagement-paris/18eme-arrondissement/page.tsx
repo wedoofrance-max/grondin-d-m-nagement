@@ -36,7 +36,21 @@ export default function DemenagementParis18emeArrPage() {
           <div className="lg:col-span-2">
             <h2 className="text-fluid-2xl font-bold text-neutral-900 mb-4">Votre déménageur dans le 18ème arrondissement</h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 18ème arrondissement, dominé par la Butte Montmartre, est l'un des plus emblématiques de Paris. Ses rues escarpées, ses escaliers et ses ruelles représentent un défi logistique particulier.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">La Butte Montmartre est l'un des accès les plus complexes à Paris. Pas de camion dans certaines rues, escaliers raides, passages étroits. Le monte-meubles est souvent indispensable dans ce secteur.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">La Butte Montmartre est l'un des accès les plus complexes à Paris. Pas de camion dans certaines rues, escaliers raides, passages étroits. Le monte-meubles est souvent indispensable dans ce secteur.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Montmartre', 'Pigalle', 'Clignancourt', 'Goutte-d\'Or', 'La Chapelle', 'Jules-Joffrin', 'Simplon'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 18ème — Code postal 75018</p>
+              <p className="text-xs text-amber-700">Topographie très accidentée autour de la Butte Montmartre — certaines rues sont inaccessibles aux camions. Accès Montmartre uniquement à pied ou en camionnette relais. Nos équipes utilisent des diables professionnels pour les rues en pente et planifient les itinéraires optimaux.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[{ icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h' }, { icon: 'ph:shield-check', title: 'Assurance incluse', desc: 'RC Professionnelle' }, { icon: 'ph:star-fill', title: '4,9/5 sur Google', desc: '34 avis vérifiés' }, { icon: 'ph:users', title: '1 500+ clients', desc: 'Paris et IDF' }].map((item) => (
                 <div key={item.title} className="flex items-start gap-3 p-4 bg-grondin-50 rounded-xl"><Icon icon={item.icon} width={20} height={20} className="text-grondin-500 flex-shrink-0 mt-0.5" aria-hidden /><div><p className="font-semibold text-neutral-900 text-sm">{item.title}</p><p className="text-xs text-neutral-600">{item.desc}</p></div></div>

@@ -68,9 +68,23 @@ export default function DemenagementNoisyLeGrandPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Noisy-le-Grand offre un parc immobilier très varié : barres et tours dans les quartiers Pavé Neuf et Les Clos, maisons individuelles dans les secteurs résidentiels proches des bois, appartements récents dans le centre-ville et le plateau du Mont d'Est. Ces configurations demandent des approches différentes selon le secteur.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous accompagne avec une visite préalable gratuite pour identifier les besoins spécifiques de votre logement. Nous établissons un devis personnalisé sous 24h et intervenons avec les équipements adaptés : monte-meubles si nécessaire, camion dimensionné à votre volume.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Mont d\'Est', 'Champy', 'Les Richardets', 'Pavé Neuf', 'Brou-sur-Chantereine', 'Les Fontenelles', 'Centre Ancien'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Noisy-le-Grand (93160)</p>
+              <p className="text-xs text-blue-700">Seine-Saint-Denis (93), à 17 km à l'est de Paris. RER A (Noisy-le-Grand-Mont d'Est) et RER E (Noisy-le-Grand-Mont d'Est). Grands ensembles architecturaux emblématiques (Abraxas, Arènes de Picasso) — nos équipes maîtrisent les contraintes d'accès de ces résidences complexes.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

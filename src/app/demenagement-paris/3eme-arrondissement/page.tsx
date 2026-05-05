@@ -52,7 +52,21 @@ export default function DemenagementParis3emeArrPage() {
               Votre déménageur dans le 3ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 3ème arrondissement est au cœur du Marais historique. On y trouve des immeubles du 17ème et 18ème siècle, des galeries d'art et des cours intérieures caractéristiques. Les escaliers en pierre sans ascenseur sont très courants.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Grondin Déménagement connaît parfaitement les spécificités du 3ème : passages étroits, portes cochères, cours d'immeuble. Demandez votre devis gratuit, notre conseiller vous rappelle sous 24h.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Grondin Déménagement connaît parfaitement les spécificités du 3ème : passages étroits, portes cochères, cours d'immeuble. Demandez votre devis gratuit, notre conseiller vous rappelle sous 24h.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Arts-et-Métiers', 'Temple', 'Enfants-Rouges', 'Archives', 'Sainte-Avoie', 'Beaubourg', 'Haut-Marais'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 3ème — Code postal 75003</p>
+              <p className="text-xs text-amber-700">Cœur du Haut-Marais avec hôtels particuliers et immeubles anciens. Cours intérieures souvent étroites, accès limités. Nos équipes évaluent l'accès en cour lors de la visite préalable et planifient l'utilisation du monte-meubles ou du portage en escalier.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },

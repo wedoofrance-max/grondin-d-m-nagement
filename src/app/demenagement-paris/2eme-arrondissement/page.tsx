@@ -68,9 +68,23 @@ export default function DemenagementParis2Page() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Le 2ème arrondissement, avec ses immeubles haussmanniens et ses bâtiments anciens du quartier Sentier, présente des escaliers souvent étroits, des cours intérieures et peu d'ascenseurs. La densité du quartier et la présence de nombreuses entreprises compliquent le stationnement en semaine. Le secteur de Montorgueil, en partie piétonnier, nécessite une planification spécifique.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement effectue une visite préalable gratuite pour anticiper toutes ces contraintes. Nous vous proposons un créneau adapté (tôt le matin, week-end) et gérons les autorisations de stationnement nécessaires. Devis remis sous 24h, assurance RC Professionnelle incluse.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Bonne-Nouvelle', 'Bourse', 'Sentier', 'Vivienne-Gaillon', 'Palais-Royal', 'Rue Montorgueil'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 2ème — Code postal 75002</p>
+              <p className="text-xs text-amber-700">Arrondissement le moins peuplé de Paris. Rues étroites du Sentier et tissu haussmannien dense. Nombreux immeubles sans ascenseur — notre monte-meubles extérieur est disponible pour les étages supérieurs et les pièces volumineuses.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

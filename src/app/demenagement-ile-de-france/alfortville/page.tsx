@@ -68,9 +68,23 @@ export default function DemenagementAlfortvillePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Alfortville est une commune à taille humaine avec des immeubles collectifs d'époque et des résidences plus récentes. La ville est bien structurée, avec des rues accessibles aux camions de déménagement et des copropriétés équipées d'ascenseurs dans la plupart des cas. C'est une commune où les déménagements s'organisent généralement sans difficulté particulière.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous propose une visite préalable gratuite pour évaluer votre logement et vous remettre un devis personnalisé sous 24h. Nous assurons la protection des parties communes et intervenons avec le matériel adapté à votre volume.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Alfort', 'Le Port', 'Bords de Marne', 'Maisons-Alfort côté Alfortville', 'La Pyramide', 'Les Bords de Seine'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Alfortville (94140)</p>
+              <p className="text-xs text-blue-700">Val-de-Marne (94), limitrophe de Maisons-Alfort et Vitry-sur-Seine. RER D (gare d'Alfortville). Tissu mixte : immeubles collectifs et pavillons en bord de Marne. Nos équipes gèrent les accès riverains et les contraintes de stationnement en voie publique.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

@@ -68,9 +68,23 @@ export default function DemenagementParis1Page() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Le 1er arrondissement de Paris est l'un des plus touristiques et des plus contraints pour les déménagements. Les rues autour du Louvre, de la place du Palais-Royal et des quais de la Seine sont soumises à des restrictions de circulation permanentes ou temporaires. Les immeubles haussmanniens typiques du quartier ont des escaliers en pierre de taille avec de faibles largeurs de passage, ce qui exige souvent l'utilisation d'un monte-meubles extérieur pour les pièces volumineuses.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement anticipe ces spécificités lors de la visite préalable gratuite. Nous évaluons chaque logement, identifions les contraintes d'accès et planifions l'intervention avec soin. Votre devis vous est remis sous 24h, et nous gérons les autorisations de stationnement nécessaires. Le jour J, nos équipes protègent systématiquement les parties communes.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Louvre', 'Châtelet', 'Les Halles', 'Palais-Royal', 'Tuileries', 'Sainte-Opportune', 'La Cité'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 1er — Code postal 75001</p>
+              <p className="text-xs text-amber-700">Secteur ultra-central avec forte réglementation de stationnement. Rues piétonnes autour des Halles, quais de Seine soumis à restrictions. Nous obtenons les arrêtés de stationnement en amont et intervenons souvent dès 7h30 pour profiter des créneaux disponibles.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

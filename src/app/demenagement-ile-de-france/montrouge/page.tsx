@@ -68,9 +68,23 @@ export default function DemenagementMontrougePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Montrouge concentre principalement des appartements dans des immeubles collectifs de différentes générations : immeubles anciens du centre-ville, résidences des années 1970-80, et de nombreux programmes neufs construits depuis les années 2000. La densité de la ville impose une organisation précise, notamment pour le stationnement et l'accès aux monte-charges.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous accompagne avec une visite préalable gratuite pour anticiper les contraintes de votre immeuble et vous remettre un devis personnalisé sous 24h. Nous gérons les formalités avec votre syndic ou gardien et protégeons systématiquement les parties communes.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Rouchouse', 'Bagneux côté Montrouge', 'Châtillon côté Montrouge', 'Moulin de la Vierge', 'Les Ormeaux', 'Quartier de la Mairie'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Montrouge (92120)</p>
+              <p className="text-xs text-blue-700">Hauts-de-Seine (92), limitrophe du 14ème arrondissement de Paris. Métro L4 (Montrouge, Bagneux). Forte densité résidentielle avec beaucoup d'immeubles des années 70-80 et programmes récents. Stationnement réglementé en centre-ville — arrêtés obtenus à l'avance.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

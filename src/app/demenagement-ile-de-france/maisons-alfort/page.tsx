@@ -68,9 +68,23 @@ export default function DemenagementMaisonsAlfortPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Maisons-Alfort se distingue par la qualité de son parc immobilier : maisons de ville avec jardins dans les rues proches de la Marne, appartements dans des immeubles haussmanniens en centre-ville, et résidences récentes dans les secteurs en développement. La ville offre un cadre favorable aux déménagements, avec des voiries en général bien accessibles.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous accompagne avec une visite préalable gratuite pour dresser l'inventaire de votre logement et établir un devis personnalisé. Nous nous adaptons à tous les types de biens et gérons les éventuelles spécificités d'accès.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Alfort', 'École Vétérinaire', 'Les Juilliottes', 'Bords de Marne', 'La Bourdonnais', 'Charentonneau'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Maisons-Alfort (94700)</p>
+              <p className="text-xs text-blue-700">Val-de-Marne (94), limitrophe d'Alfortville et Charenton. Métro L8 (École Vétérinaire de Maisons-Alfort, Les Juilliottes) et RER D. Tissu mixte avec quartiers pavillonnaires calmes et résidences collectives. Nos équipes adaptent le camion au gabarit de chaque rue.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

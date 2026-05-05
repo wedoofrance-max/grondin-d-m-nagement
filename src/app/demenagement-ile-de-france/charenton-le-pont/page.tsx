@@ -68,9 +68,23 @@ export default function DemenagementCharentonPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Charenton-le-Pont est une commune résidentielle appréciée pour sa proximité immédiate avec Paris et ses berges de la Marne. Le parc immobilier comprend des appartements haussmanniens dans le vieux Charenton, des résidences récentes dans le secteur de la Gare et des maisons en bordure de rivière dans les rues calmes.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement intervient à Charenton-le-Pont avec la même rigueur qu'à Paris : visite préalable gratuite, devis sous 24h, équipe adaptée et protection des parties communes. La proximité avec Paris nous permet d'intervenir avec des délais réduits et une grande flexibilité horaire.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Bercy Village côté Charenton', 'Les Quatre-Chemins', 'Plateau de Gravelle', 'Bords de Marne', 'Alfortville côté Charenton', 'Saint-Maurice'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Infos pratiques — Charenton-le-Pont (94220)</p>
+              <p className="text-xs text-amber-700">Val-de-Marne (94), limitrophe du 12ème arrondissement de Paris. Métro L8 (Charenton-Écoles, École Vétérinaire). Zone ZFE Grand Paris — nos camions sont conformes Crit'Air pour circuler vers Paris sans restriction.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

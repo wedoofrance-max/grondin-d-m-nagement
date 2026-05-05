@@ -68,9 +68,23 @@ export default function DemenagementMalakoffPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Malakoff est une commune très compacte avec une majorité d'appartements en immeuble collectif, des maisons de ville dans les quelques rues résidentielles, et des programmes récents dans les secteurs rénovés. La densité de la ville rend la question du stationnement particulièrement importante à anticiper.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement effectue une visite préalable gratuite pour évaluer votre logement et les conditions d'accès. Nous prenons en charge les formalités de stationnement si nécessaire et établissons un devis précis sous 24h. Chaque déménagement à Malakoff bénéficie de notre assurance RC Professionnelle.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Les Vaches', 'Quartier de la Gare', 'Rue du Moulin', 'Plateau', 'Quartier Carnot', 'Montrouge côté Malakoff'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Malakoff (92240)</p>
+              <p className="text-xs text-blue-700">Hauts-de-Seine (92), limitrophe du 14ème arrondissement de Paris. Métro L13 (Malakoff-Plateau de Vanves, Malakoff-Rue Étienne Dolet). Nombreuses rues résidentielles avec stationnement réglementé — nous obtenons les arrêtés de stationnement nécessaires auprès de la mairie.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

@@ -68,9 +68,23 @@ export default function DemenagementCreteilPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Créteil concentre une grande variété de logements. Les tours du quartier du lac (Soleil, Lune, Étoile) sont des immeubles de grande hauteur nécessitant une organisation précise pour l'utilisation des monte-charges. Le centre-ville propose des copropriétés plus récentes avec ascenseurs standard, et les quartiers sud disposent de maisons individuelles plus faciles d'accès.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement réalise une visite gratuite pour adapter notre intervention à votre logement spécifique. Nous établissons un devis personnalisé et gérons les contraintes logistiques propres à votre quartier. Notre équipe s'occupe de tout, de l'emballage jusqu'au placement dans votre nouveau logement.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Les Bleuets', 'Le Palais', 'Mont-Mesly', 'La Habette', 'Bords de Marne', 'Les Sarrazins', 'Préfecture'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Créteil (94000)</p>
+              <p className="text-xs text-blue-700">Préfecture du Val-de-Marne (94). Métro L8 (terminus Créteil-Pointe du Lac, Créteil-Préfecture, Créteil-L'Échat). Nombreuses tours résidentielles du quartier du Palais — nos équipes travaillent avec les régies de copropriété pour planifier les interventions.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

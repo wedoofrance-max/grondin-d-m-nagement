@@ -68,9 +68,23 @@ export default function DemenagementCourbevoiePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Courbevoie mêle différents types de logements : appartements dans les tours résidentielles du quartier La Défense, maisons et immeubles anciens dans le centre historique de Courbevoie, et résidences neuves dans les zones en développement. Chaque situation demande une approche spécifique.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement prend en charge votre déménagement à Courbevoie avec sérieux : visite préalable gratuite, devis sous 24h, équipe et véhicule adaptés à votre volume. Nous coordonnons avec votre copropriété ou bailleur pour les créneaux de monte-charge et protégeons parties communes et ascenseurs.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['La Défense côté Courbevoie', 'Bécon-les-Bruyères', 'Les Bruyères', 'Faubourg de l\'Arche', 'Centre-ville', 'La Garenne', 'Bords de Seine'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Infos pratiques — Courbevoie (92400)</p>
+              <p className="text-xs text-amber-700">Hauts-de-Seine (92), limitrophe de La Défense. RER A (La Défense) et Transilien L. Forte densité de tours résidentielles et d'immeubles de standing — nous gérons les réservations d'ascenseur de service et les créneaux imposés par les régies.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

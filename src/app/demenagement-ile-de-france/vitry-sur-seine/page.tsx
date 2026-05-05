@@ -68,9 +68,23 @@ export default function DemenagementVitrySeinePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Vitry-sur-Seine présente des logements très variés : grands ensembles dans les secteurs nord proches de Paris, maisons individuelles dans les quartiers sud, résidences neuves livrées dans le cadre du Grand Paris Express, et anciens logements ouvriers reconvertis. Cette diversité demande une équipe expérimentée et polyvalente.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous accompagne avec une visite préalable gratuite pour préparer votre déménagement dans les meilleures conditions. Devis personnalisé sous 24h, équipe dédiée et assurance RC Professionnelle incluse dans chaque prestation.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Grand-Vitry', 'Plateau-Balzac', 'Raimbouillet', 'Les Ardoines', 'Bords de Seine', 'Moulin de Saquet'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Vitry-sur-Seine (94400)</p>
+              <p className="text-xs text-blue-700">Val-de-Marne (94), limitrophe d'Ivry-sur-Seine et Choisy-le-Roi. RER C (gare de Vitry-sur-Seine) et Métro L7 (Villejuif-Louis-Aragon côté Vitry). Secteur des Ardoines en pleine transformation urbaine — nombreux programmes neufs avec accès chantier. Nous sécurisons les interventions en milieu de construction.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

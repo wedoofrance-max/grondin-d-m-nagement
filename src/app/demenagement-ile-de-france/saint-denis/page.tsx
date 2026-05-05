@@ -68,9 +68,23 @@ export default function DemenagementSaintDenisPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Saint-Denis propose une diversité de logements : immeubles anciens du centre historique avec escaliers étroits, tours et barres des années 1970 dans les quartiers Franc-Moisin ou Cristino Garcia, et résidences récentes dans la Plaine Saint-Denis. Cette variété demande une équipe expérimentée et du matériel adapté.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement effectue une visite gratuite pour dresser l'inventaire et évaluer les accès. Nous planifions l'intervention en tenant compte des contraintes de circulation locales et protégeons systématiquement les parties communes. Notre devis vous est remis sous 24h.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Basilique', 'Franc-Moisin', 'Pleyel', 'La Plaine Saint-Denis', 'Stade de France', 'Floréal-Saussaie-Allende'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Saint-Denis (93200)</p>
+              <p className="text-xs text-blue-700">Seine-Saint-Denis (93), à 9 km au nord de Paris. Métro L13 (Saint-Denis-Porte de Paris) et RER B/D (Saint-Denis). Fort renouvellement urbain dans le secteur Pleyel (future Cité musicale) et La Plaine. Nos camions sont conformes ZFE pour accéder aux nouvelles résidences du secteur.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

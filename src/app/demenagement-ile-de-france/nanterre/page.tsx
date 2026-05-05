@@ -68,9 +68,23 @@ export default function DemenagementNanterrePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Nanterre présente une grande hétérogénéité de logements : appartements dans des tours des années 1970, maisons de ville dans les quartiers résidentiels du Mont-Valérien, et résidences plus récentes dans les secteurs rénovés. Cette diversité implique des besoins très différents en termes d'équipement et d'organisation.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous propose une visite gratuite à domicile pour évaluer votre situation précise. Nous établissons un devis détaillé sous 24h et intervenons avec une équipe et un véhicule dimensionnés à votre volume. La protection des parties communes est systématique.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Université', 'Centre-ville', 'Les Provinces Françaises', "Chemin de l'Île", 'Parc Municipale des Sports', 'La Boule', 'Préfecture'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Infos pratiques — Nanterre (92000)</p>
+              <p className="text-xs text-amber-700">Préfecture des Hauts-de-Seine (92). RER A (Nanterre-Préfecture, Nanterre-Université, Nanterre-Ville) et Transilien L. Proche de La Défense — certains immeubles imposent des créneaux de déménagement stricts le week-end. Nos équipes coordonnent avec les régies en amont.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

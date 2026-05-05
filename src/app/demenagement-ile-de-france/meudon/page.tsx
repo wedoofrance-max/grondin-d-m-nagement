@@ -68,9 +68,23 @@ export default function DemenagementMeudonPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Meudon présente une grande variété de logements : villas avec jardins sur les coteaux boisés, grands ensembles dans le quartier de Meudon-la-Forêt avec ses rues en pente, et appartements dans les immeubles du bas-Meudon en bord de Seine. Les accès sont souvent contraints par la topographie.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement réalise une visite préalable gratuite à Meudon pour évaluer les accès et les spécificités de votre logement. Nous sélectionnons le véhicule adapté au gabarit de votre rue et dimensionnons l'équipe à votre volume. Devis transmis sous 24h, assurance incluse.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Meudon-la-Forêt', 'Bellevue', 'Centre-ville', 'Val Fleury', 'Trivaux', 'Hauts de Meudon', 'Bords de Seine'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Meudon (92190)</p>
+              <p className="text-xs text-blue-700">Hauts-de-Seine (92), à 10 km au sud-ouest de Paris. Transilien N (gare de Meudon-Val-Fleury) et Transilien C (gare de Meudon). Topographie accidentée avec de nombreuses rues en pente — certains accès nécessitent un monte-meubles ou un camion de gabarit réduit.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

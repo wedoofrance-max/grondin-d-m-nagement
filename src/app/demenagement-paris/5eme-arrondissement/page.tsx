@@ -52,7 +52,21 @@ export default function DemenagementParis5emeArrPage() {
               Votre déménageur dans le 5ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 5ème arrondissement incarne le Paris estudiantin : la Sorbonne, le Quartier Latin, la rue Mouffetard. Les immeubles y mêlent bâtiments haussmanniens et anciennes demeures du cœur historique de Paris.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Déménager dans le 5ème peut être complexe en raison des nombreuses zones de circulation restreinte et des rues étroites. Grondin Déménagement anticipe ces contraintes pour votre tranquillité.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Déménager dans le 5ème peut être complexe en raison des nombreuses zones de circulation restreinte et des rues étroites. Grondin Déménagement anticipe ces contraintes pour votre tranquillité.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Panthéon', 'Sorbonne', 'Jardin des Plantes', 'Val-de-Grâce', 'Luxembourg', 'Mouffetard', 'Contrescarpe'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 5ème — Code postal 75005</p>
+              <p className="text-xs text-amber-700">Quartier Latin avec forte densité étudiante (nombreux studios et petits appartements). Rues médiévales très étroites autour de Mouffetard — accès camion parfois impossible, nous utilisons un véhicule relais de petite taille si nécessaire.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },

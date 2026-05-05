@@ -68,9 +68,23 @@ export default function DemenagementLevalloisPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               À Levallois-Perret, les logements sont majoritairement des appartements en immeuble collectif, souvent construits dans les années 1970-2000. Les parkings souterrains, couloirs étroits et accès restreints aux monte-charges sont courants. Certaines résidences imposent des horaires d'intervention et exigent la protection des parties communes avant tout déménagement.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement prend rendez-vous pour une visite gratuite à votre domicile afin d'identifier toutes ces contraintes avant le jour J. Nous préparons le matériel adapté — protections de sol, couvertures, sangles — et vous informons des démarches à effectuer auprès de votre syndic si nécessaire.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Front de Seine', 'Bords de Seine', 'Les Champerret', 'Louise Michel', 'Trézel', 'République'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Infos pratiques — Levallois-Perret (92300)</p>
+              <p className="text-xs text-amber-700">Hauts-de-Seine (92), limitrophe du 17ème arrondissement de Paris. Métro L3 (Anatole France, Louise Michel, Pont de Levallois-Bécon). L'une des communes les plus denses de France — immeubles compacts avec halls souvent étroits. Nous utilisons le monte-meubles extérieur en priorité.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

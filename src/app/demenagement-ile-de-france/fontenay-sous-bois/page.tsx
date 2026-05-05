@@ -68,9 +68,23 @@ export default function DemenagementFontenayPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Fontenay-sous-Bois mêle villas avec jardins sur le plateau supérieur, immeubles collectifs des années 1960-80 dans le bas de la ville, et résidences récentes dans les secteurs rénovés. Les dénivelés et les rues en pente demandent parfois un matériel spécifique et une planification adaptée.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement effectue une visite préalable gratuite pour évaluer les accès, identifier les difficultés potentielles (pente, largeur de rue, escaliers) et vous remettre un devis précis sous 24h. Nous adaptons notre équipe et notre matériel à votre situation.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Val-de-Fontenay', 'Les Larris', 'Alouettes', 'Les Roseaux', 'Rigollots', 'Bois de Vincennes côté Fontenay'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Fontenay-sous-Bois (94120)</p>
+              <p className="text-xs text-blue-700">Val-de-Marne (94), à l'est de Paris. RER A (Val-de-Fontenay, Fontenay-sous-Bois). Tissu pavillonnaire important dans les quartiers hauts — accès parfois en pente et rues étroites. Nos équipes évaluent l'accessibilité lors de la visite préalable.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

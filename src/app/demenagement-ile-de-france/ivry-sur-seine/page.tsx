@@ -68,9 +68,23 @@ export default function DemenagementIvrySeinePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Ivry-sur-Seine mêle des quartiers très différents : le secteur ouvrier historique avec ses immeubles d'époque et ses rues en pente, les zones en reconversion du bord de Seine avec de nombreux programmes neufs, et les quartiers résidentiels comme le Petit Ivry. Cette diversité nécessite une bonne connaissance du terrain.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement effectue une visite préalable gratuite dans votre logement à Ivry pour dresser un inventaire complet et identifier les contraintes d'accès. Devis transmis sous 24h, intervention avec équipe et matériel adaptés, assurance RC Professionnelle incluse.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Petit-Ivry', 'Ivry-Port', 'Les Coteaux', 'Confluences', 'Pierre et Marie Curie', 'Bords de Seine'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Ivry-sur-Seine (94200)</p>
+              <p className="text-xs text-blue-700">Val-de-Marne (94), limitrophe du 13ème arrondissement de Paris. RER C (gare d'Ivry-sur-Seine) et Métro L7 (Mairie d'Ivry). Nombreux programmes neufs dans le secteur Confluences. Nos équipes gèrent les livraisons en ZAC avec accès sécurisé.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

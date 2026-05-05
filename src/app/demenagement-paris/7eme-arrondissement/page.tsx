@@ -52,7 +52,21 @@ export default function DemenagementParis7emeArrPage() {
               Votre déménageur dans le 7ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 7ème arrondissement est l'un des plus élégants de Paris : la Tour Eiffel, le Musée d'Orsay, les Invalides et de nombreuses ambassades. Les immeubles haussmanniens sont omniprésents avec leurs escaliers majestueux.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Dans le 7ème, les immeubles de standing ont souvent des exigences particulières. Grondin Déménagement gère votre déménagement avec tout le soin et la discrétion requis.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Dans le 7ème, les immeubles de standing ont souvent des exigences particulières. Grondin Déménagement gère votre déménagement avec tout le soin et la discrétion requis.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Saint-Thomas-d\'Aquin', 'Invalides', 'École Militaire', 'Gros-Caillou', 'Palais-Bourbon', 'Champ-de-Mars', 'Tour Eiffel'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 7ème — Code postal 75007</p>
+              <p className="text-xs text-amber-700">Arrondissement résidentiel et diplomatique avec immeubles haussmanniens de haut standing. Restrictions de stationnement importantes autour des Invalides et du Champ-de-Mars. Nos équipes gèrent les autorisations de la Préfecture et respectent les exigences strictes des garderies.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },

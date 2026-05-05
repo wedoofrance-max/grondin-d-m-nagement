@@ -52,7 +52,21 @@ export default function DemenagementParis8emeArrPage() {
               Votre déménageur dans le 8ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 8ème arrondissement est le quartier des grandes avenues parisiennes. Les Champs-Élysées, l'Avenue Montaigne et la Madeleine. Les appartements haussmanniens y sont souvent grands et aux étages élevés.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">La circulation dans le 8ème peut être intense. Nos équipes interviennent en dehors des heures de pointe et s'occupent de toutes les autorisations de stationnement.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">La circulation dans le 8ème peut être intense. Nos équipes interviennent en dehors des heures de pointe et s'occupent de toutes les autorisations de stationnement.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Champs-Élysées', 'Madeleine', 'Europe', 'Faubourg-du-Roule', 'Miroir', 'Plaine de Monceau'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 8ème — Code postal 75008</p>
+              <p className="text-xs text-amber-700">Triangle d'or avec résidences de prestige. Axe Champs-Élysées très réglementé — autorisation de stationnement obligatoire, intervention souvent le week-end matin. Nos déménageurs sont équipés pour manipuler meubles de luxe et objets d'art avec toutes les précautions requises.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },

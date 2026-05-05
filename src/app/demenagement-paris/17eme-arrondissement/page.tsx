@@ -36,7 +36,21 @@ export default function DemenagementParis17emeArrPage() {
           <div className="lg:col-span-2">
             <h2 className="text-fluid-2xl font-bold text-neutral-900 mb-4">Votre déménageur dans le 17ème arrondissement</h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 17ème arrondissement, entre les Batignolles et les Ternes, est un arrondissement bourgeois et familial. Les Batignolles attirent les jeunes familles, tandis que les Ternes offrent des appartements plus spacieux.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Le 17ème est bien desservi et facilement accessible. Nos équipes connaissent cet arrondissement et ses différents quartiers pour vous garantir un déménagement fluide.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Le 17ème est bien desservi et facilement accessible. Nos équipes connaissent cet arrondissement et ses différents quartiers pour vous garantir un déménagement fluide.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Batignolles', 'Épinettes', 'Ternes', 'Plaine de Monceau', 'Villiers', 'Navier', 'Porte de Clichy'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Paris 17ème — Code postal 75017</p>
+              <p className="text-xs text-blue-700">Contrastes entre le quartier chic des Ternes et les Batignolles/Épinettes plus populaires. Tramway T3b (Porte de Clichy). Métro L2/L3/L13. Le nouveau quartier Clichy-Batignolles a des règles de stationnement spécifiques que nous gérons avec les services municipaux.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[{ icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h' }, { icon: 'ph:shield-check', title: 'Assurance incluse', desc: 'RC Professionnelle' }, { icon: 'ph:star-fill', title: '4,9/5 sur Google', desc: '34 avis vérifiés' }, { icon: 'ph:users', title: '1 500+ clients', desc: 'Paris et IDF' }].map((item) => (
                 <div key={item.title} className="flex items-start gap-3 p-4 bg-grondin-50 rounded-xl"><Icon icon={item.icon} width={20} height={20} className="text-grondin-500 flex-shrink-0 mt-0.5" aria-hidden /><div><p className="font-semibold text-neutral-900 text-sm">{item.title}</p><p className="text-xs text-neutral-600">{item.desc}</p></div></div>

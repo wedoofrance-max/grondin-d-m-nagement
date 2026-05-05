@@ -52,7 +52,21 @@ export default function DemenagementParis9emeArrPage() {
               Votre déménageur dans le 9ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 9ème arrondissement, entre l'Opéra Garnier et Pigalle, est un quartier vivant et populaire auprès des jeunes actifs. Immeubles haussmanniens et du début du 20ème siècle se côtoient.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Le 9ème est dense et animé. Nos déménageurs connaissent ses ruelles et savent anticiper les contraintes de stationnement et d'accès.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Le 9ème est dense et animé. Nos déménageurs connaissent ses ruelles et savent anticiper les contraintes de stationnement et d'accès.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Saint-Georges', 'Opéra', 'Rochechouart', 'Chaussée-d\'Antin', 'Pigalle', 'Lorette', 'La Trinité'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 9ème — Code postal 75009</p>
+              <p className="text-xs text-amber-700">Mixte bureau/résidentiel autour de l'Opéra. Nombreux immeubles haussmanniens avec caves et greniers accessibles uniquement par escaliers étroits. Nos équipes sont formées au portage vertical en escalier sans monte-meubles pour les objets que la réglementation de l'immeuble l'impose.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },

@@ -52,7 +52,21 @@ export default function DemenagementParis10emeArrPage() {
               Votre déménageur dans le 10ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 10ème arrondissement est en plein essor : le Canal Saint-Martin et ses quais animés, la Gare du Nord et ses environs en pleine rénovation. Un arrondissement très prisé des jeunes actifs.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Les abords du Canal Saint-Martin ont des rues étroites. Grondin Déménagement planifie votre déménagement dans le 10ème avec précision pour une intervention sans accroc.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Les abords du Canal Saint-Martin ont des rues étroites. Grondin Déménagement planifie votre déménagement dans le 10ème avec précision pour une intervention sans accroc.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Canal Saint-Martin', 'Gare du Nord', 'Gare de l\'Est', 'Bonne-Nouvelle', 'Louis-Blanc', 'Hopital Saint-Louis', 'Château d\'Eau'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Paris 10ème — Code postal 75010</p>
+              <p className="text-xs text-blue-700">En pleine gentrification avec nombreux lofts et appartements rénovés autour du Canal Saint-Martin. Rues souvent encombrées le week-end — stationnement à planifier en avance. Zone ZFE : nos camions sont homologués Crit'Air.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },

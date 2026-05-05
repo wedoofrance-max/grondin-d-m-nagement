@@ -68,9 +68,23 @@ export default function DemenagementBondyPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Bondy présente des logements variés : grands ensembles réhabilités dans les quartiers nord, pavillons et maisons de ville dans les secteurs résidentiels, et résidences récentes dans les secteurs en développement autour des nouvelles gares du Grand Paris Express. La ville est en pleine évolution urbaine.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous accompagne avec une visite préalable gratuite pour préparer votre déménagement dans les meilleures conditions. Devis personnalisé sous 24h, équipe adaptée à votre volume et assurance RC Professionnelle incluse.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Les Coquetiers', 'Bondy Nord', 'Quartier de la Gare', 'Les Fauvettes', 'Cité Paul-Bert', 'Bobigny côté Bondy'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Bondy (93140)</p>
+              <p className="text-xs text-blue-700">Seine-Saint-Denis (93), à 12 km à l'est de Paris. RER E (gare de Bondy) et future ligne 15. Mélange de grands ensembles et de pavillons dans les quartiers résidentiels. Nos équipes connaissent les contraintes de stationnement des résidences fermées avec digicode.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

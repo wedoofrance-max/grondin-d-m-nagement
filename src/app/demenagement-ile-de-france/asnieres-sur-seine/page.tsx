@@ -68,9 +68,23 @@ export default function DemenagementAsnieresSeinePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Asnières-sur-Seine concentre des appartements dans des immeubles des années 1970-1990 côté Courtilles, des logements plus anciens en centre-ville avec escaliers typiques, et des résidences récentes dans les quartiers rénovés. La ville connaît également de nombreux emménagements liés à l'attractivité du Grand Paris Express.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement intervient à Asnières avec une visite préalable gratuite pour dresser l'inventaire et évaluer les conditions d'accès. Nous établissons un devis personnalisé sous 24h et coordonnons l'ensemble du déménagement avec soin.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Les Grésillons', 'Trois Ponts', 'Les Hauts d\'Asnières', 'Quartier des Bourguignons', 'Bords de Seine', 'Villeneuve-la-Garenne côté Asnières'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Asnières-sur-Seine (92600)</p>
+              <p className="text-xs text-blue-700">Hauts-de-Seine (92), à 8 km au nord-ouest de Paris. RER C et Transilien J (gare d'Asnières-sur-Seine). Nombreux immeubles récents en bord de Seine. Nos camions accèdent aux quais avec les autorisations de stationnement adaptées.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

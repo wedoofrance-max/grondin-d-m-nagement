@@ -68,9 +68,23 @@ export default function DemenagementClamartPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Clamart se distingue par son cadre de vie agréable avec de nombreuses maisons individuelles et pavillons dans les rues arborées proches de la forêt, et des immeubles collectifs dans le secteur plus urbanisé du Petit-Clamart. Le relief de la ville demande une planification soignée pour les véhicules de déménagement.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement effectue une visite préalable gratuite à Clamart pour évaluer les accès et établir un devis précis. Nous adaptons notre matériel aux contraintes spécifiques de votre rue et de votre logement. Devis transmis sous 24h, assurance RC Professionnelle incluse.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Panorama', 'Plaine de Clamart', 'Trivaux-Garenne', 'Les Petits Bois', 'Maison Rouge', 'Quartier de la Gare'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Clamart (92140)</p>
+              <p className="text-xs text-blue-700">Hauts-de-Seine (92), à 10 km au sud-ouest de Paris. Transilien N (gare de Clamart). Topographie vallonnée avec forêt de Clamart — certains accès sont en pente, nous sécurisons le chargement/déchargement avec les équipements adaptés.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

@@ -68,9 +68,23 @@ export default function DemenagementIssyPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Issy-les-Moulineaux présente une variété de typologies de logements : appartements dans des immeubles des années 1960-70 côté Fort d'Issy, résidences récentes avec hall sécurisé dans le Val-de-Seine, maisons individuelles dans les rues calmes de la Croix de Pierre. Notre équipe s'adapte à chacune de ces configurations.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Nous proposons une visite gratuite à domicile pour évaluer le volume, les accès (ascenseur, escaliers, cour) et vous remettre un devis détaillé sous 24h. Le jour du déménagement, nous protégeons les parties communes et assurons un déménagement propre et organisé.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Quartier des Épinettes', 'Fort d\'Issy', 'Hauts d\'Issy', 'Bords de Seine', 'Corentin Celton', 'Quartier du Moulin'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Infos pratiques — Issy-les-Moulineaux (92130)</p>
+              <p className="text-xs text-amber-700">Hauts-de-Seine (92), limitrophe du 15ème arrondissement de Paris. Métro L12 (Mairie d'Issy, Corentin Celton) et Tramway T2. ZFE Grand Paris — nos camions sont homologués. Fort développement de bureaux convertis en logements dans le secteur Fort d'Issy.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

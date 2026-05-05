@@ -52,7 +52,21 @@ export default function DemenagementParis4emeArrPage() {
               Votre déménageur dans le 4ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 4ème arrondissement est l'un des plus recherchés de Paris, avec le Marais, l'Île Saint-Louis et les quais de Seine. Ses immeubles historiques offrent de beaux volumes mais des accès souvent complexes.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Dans le 4ème, chaque déménagement est unique. Nos équipes évaluent les contraintes d'accès lors de la visite et prévoient le monte-meubles si nécessaire. Devis gratuit sous 24h.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Dans le 4ème, chaque déménagement est unique. Nos équipes évaluent les contraintes d'accès lors de la visite et prévoient le monte-meubles si nécessaire. Devis gratuit sous 24h.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Saint-Merri', 'Saint-Gervais', 'Arsenal', 'Notre-Dame', 'Île Saint-Louis', 'Marais historique', 'Place des Vosges'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 4ème — Code postal 75004</p>
+              <p className="text-xs text-amber-700">Marais historique et Île Saint-Louis avec fort flux touristique. Circulation très réglementée, zones piétonnes étendues. Déménagements planifiés tôt le matin ou en dehors des pics touristiques. Immeubles classés : précautions renforcées pour les parties communes.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },

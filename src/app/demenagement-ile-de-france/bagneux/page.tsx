@@ -68,9 +68,23 @@ export default function DemenagementBagneuxPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Bagneux dispose d'un parc immobilier varié : grands ensembles des années 1960-70 en cours de rénovation, programmes neufs livrés ces dernières années, et quelques maisons individuelles dans les rues résidentielles du Bas-Bagneux. L'arrivée du métro ligne 4 a accéléré le développement résidentiel et la demande de déménagements.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement vous propose une visite préalable gratuite pour préparer votre déménagement en tenant compte des spécificités de votre logement et de votre immeuble. Devis personnalisé sous 24h, équipe dédiée et assurance RC Professionnelle incluse.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Centre-ville', 'Les Blagis', 'Fontaine-Gueffier', 'Les Tertres', 'Karl Marx', 'Pasteur', 'Quartier des Meuniers'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Bagneux (92220)</p>
+              <p className="text-xs text-blue-700">Hauts-de-Seine (92), limitrophe de Montrouge et Malakoff. Métro L4 (terminus Bagneux-Lucie-Aubrac). Fort renouvellement urbain avec beaucoup de résidences récentes et grands ensembles — nous adaptons le gabarit du camion selon l'accès à chaque résidence.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

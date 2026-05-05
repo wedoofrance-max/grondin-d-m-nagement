@@ -68,9 +68,23 @@ export default function DemenagementSaintMaurPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Saint-Maur-des-Fossés est une ville essentiellement résidentielle, dominée par les maisons individuelles et les villas dans les secteurs de La Varenne et du Parc, ainsi que quelques immeubles collectifs dans les zones plus urbanisées. Les rues sont souvent larges et les accès relativement aisés pour les camions de déménagement.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-8">
+            <p className="text-neutral-600 leading-relaxed mb-6">
               Grondin Déménagement réalise une visite préalable gratuite pour évaluer votre logement et établir un devis détaillé sous 24h. Pour les maisons volumineuses, nous dimensionnons l'équipe et le camion en conséquence et planifions le déménagement sur la durée nécessaire.
             </p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['La Varenne-Saint-Hilaire', 'Saint-Maur-des-Fossés centre', 'Le Parc Saint-Maur', 'Adamville', 'Bonneuil côté Saint-Maur', 'Chennevières côté Saint-Maur', 'Bords de Marne'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-blue-800 mb-1">Infos pratiques — Saint-Maur-des-Fossés (94100)</p>
+              <p className="text-xs text-blue-700">Val-de-Marne (94), en boucle de la Marne à 14 km de Paris. RER A (La Varenne-Chennevières, Le Parc Saint-Maur, Saint-Maur-Créteil). Nombreuses maisons bourgeoises et pavillons avec jardin — déménagements souvent plus volumineux nécessitant un grand camion et une équipe renforcée.</p>
+            </div>
 
             <div className="grid sm:grid-cols-2 gap-3">
               {[

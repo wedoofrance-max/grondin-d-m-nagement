@@ -52,7 +52,21 @@ export default function DemenagementParis6emeArrPage() {
               Votre déménageur dans le 6ème arrondissement
             </h2>
             <p className="text-neutral-600 leading-relaxed mb-4">Le 6ème arrondissement, entre Saint-Germain-des-Prés et le Jardin du Luxembourg, est l'un des arrondissements les plus prisés de Paris. Ses immeubles bourgeois offrent de beaux espaces mais les escaliers sans ascenseur sont fréquents.</p>
-            <p className="text-neutral-600 leading-relaxed mb-8">Grondin Déménagement intervient dans tout le 6ème avec discrétion et professionnalisme. Notre monte-meubles permet de gérer les étages élevés sans encombrer l'escalier de service.</p>
+            <p className="text-neutral-600 leading-relaxed mb-6">Grondin Déménagement intervient dans tout le 6ème avec discrétion et professionnalisme. Notre monte-meubles permet de gérer les étages élevés sans encombrer l'escalier de service.</p>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-grondin-700 uppercase tracking-widest mb-3">Quartiers couverts</h3>
+              <div className="flex flex-wrap gap-2">
+                {['Monnaie', 'Odéon', 'Notre-Dame-des-Champs', 'Saint-Germain-des-Prés', 'Luxembourg', 'Mabillon'].map((q) => (
+                  <span key={q} className="px-3 py-1 bg-grondin-50 text-grondin-700 rounded-full text-xs font-medium border border-grondin-100">{q}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+              <p className="text-sm font-semibold text-amber-800 mb-1">Paris 6ème — Code postal 75006</p>
+              <p className="text-xs text-amber-700">Saint-Germain-des-Prés avec immeubles bourgeois et appartements de standing. Nombreux gardiens stricts sur les horaires et protections de parties communes. Nos équipes apportent systématiquement les protections de couloir et d'ascenseur exigées par les copropriétés.</p>
+            </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
                 { icon: 'ph:clock', title: 'Disponible 7j/7', desc: '8h30 à 20h, week-end inclus' },
