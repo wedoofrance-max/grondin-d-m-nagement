@@ -3,7 +3,7 @@
 
 ## Company
 
-Grondin Déménagement est une entreprise de déménagement basée à Paris (11ème arrondissement), spécialisée dans les déménagements résidentiels à Paris, en Île-de-France, et longue distance en France métropolitaine.
+Grondin Déménagement est une entreprise de déménagement professionnelle intervenant à Paris et en Île-de-France, spécialisée dans les déménagements résidentiels, le monte-meuble, et le déménagement longue distance en France métropolitaine.
 
 ## Contact
 
@@ -32,7 +32,8 @@ Grondin Déménagement est une entreprise de déménagement basée à Paris (11�
 ## Zones d'intervention
 
 - Paris intra-muros : 20 arrondissements (75001 à 75020)
-- Île-de-France : Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94), Seine-et-Marne (77), Yvelines (78), Essonne (91), Val-d'Oise (95)
+- Île-de-France : Boulogne-Billancourt, Versailles, Neuilly-sur-Seine, Levallois-Perret, Issy-les-Moulineaux, Montreuil, Vincennes, Saint-Denis, Nanterre, Colombes, Asnières-sur-Seine, Courbevoie, Créteil, Vitry-sur-Seine, Ivry-sur-Seine, Alfortville, Maisons-Alfort, Charenton-le-Pont, Saint-Maur-des-Fossés, Fontenay-sous-Bois, Noisy-le-Grand, Bondy, Clamart, Meudon, Montrouge, Malakoff, Bagneux
+- Départements couverts : Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94), Yvelines (78), Essonne (91), Val-d'Oise (95), Seine-et-Marne (77)
 - Longue distance France : Paris → Lyon, Bordeaux, Marseille, Toulouse, Nantes, Lille, Strasbourg
 
 ## Trust Signals

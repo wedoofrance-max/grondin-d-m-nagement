@@ -41,6 +41,20 @@ export default function ContactPage() {
           ))}
         </div>
 
+        <div className="mb-8 rounded-2xl overflow-hidden border border-neutral-200 shadow-card">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.76!2d2.3522!3d48.8566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUxJzIzLjgiTiAywrAyMScwNy45IkU!5e0!3m2!1sfr!2sfr!4v1"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Zone d'intervention Grondin Déménagement — Paris & Île-de-France"
+            aria-label="Carte de la zone d'intervention Grondin Déménagement"
+          />
+        </div>
+
         <div className="bg-grondin-50 rounded-2xl p-8 text-center">
           <h2 className="text-fluid-2xl font-bold text-neutral-900 mb-3">
             Vous préférez un devis en ligne ?
