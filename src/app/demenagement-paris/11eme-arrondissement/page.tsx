@@ -16,10 +16,28 @@ const FAQ = [
   { question: 'Un monte-meubles est-il disponible dans le 11ème ?', answer: 'Oui. Nous évaluons le besoin lors de la visite préalable selon votre étage et la configuration de l\'immeuble.' },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-paris/11eme-arrondissement#service',
+  name: 'Déménagement 11ème arrondissement de Paris',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Paris', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-paris/11eme-arrondissement',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementParis11emeArrPage() {
   return (
     <div className="min-h-screen bg-white">
       <BreadcrumbSchema items={[{ label: 'Déménagement Paris', href: 'https://grondin-demenagement.fr/demenagement-paris' }, { label: 'Paris 11ème', href: 'https://grondin-demenagement.fr/demenagement-paris/11eme-arrondissement' }]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
           <Breadcrumb items={[{ label: 'Déménagement Paris', href: '/demenagement-paris' }, { label: 'Paris 11ème' }]} />
@@ -65,6 +83,15 @@ export default function DemenagementParis11emeArrPage() {
               <a href="tel:+33185440050" className="flex items-center justify-center gap-2 w-full py-3 mt-2 bg-white/10 text-white rounded-xl font-semibold hover:bg-white/20 transition-colors text-sm"><Icon icon="ph:phone" width={16} height={16} aria-hidden />01 85 44 00 50</a>
             </div>
             <Link href="/demenagement-paris" className="flex items-center gap-2 p-4 bg-neutral-50 rounded-xl text-sm text-neutral-600 hover:bg-grondin-50 hover:text-grondin-600 transition-colors border border-neutral-200"><Icon icon="ph:arrow-left" width={16} height={16} aria-hidden />Tous les arrondissements</Link>
+            <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+              <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-2">Arrondissements voisins</p>
+              <div className="flex flex-col gap-1">
+        <Link href="/demenagement-paris/3eme-arrondissement" className="text-sm text-grondin-600 hover:text-grondin-500 hover:underline">→ 3ème arr.</Link>
+        <Link href="/demenagement-paris/10eme-arrondissement" className="text-sm text-grondin-600 hover:text-grondin-500 hover:underline">→ 10ème arr.</Link>
+        <Link href="/demenagement-paris/12eme-arrondissement" className="text-sm text-grondin-600 hover:text-grondin-500 hover:underline">→ 12ème arr.</Link>
+        <Link href="/demenagement-paris/20eme-arrondissement" className="text-sm text-grondin-600 hover:text-grondin-500 hover:underline">→ 20ème arr.</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

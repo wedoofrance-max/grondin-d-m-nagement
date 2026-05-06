@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/saint-denis#service',
+  name: 'Déménagement Saint-Denis',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Saint-Denis', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/saint-denis',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementSaintDenisPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementSaintDenisPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Saint-Denis', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/saint-denis' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementSaintDenisPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Saint-Denis propose une diversité de logements : immeubles anciens du centre historique avec escaliers étroits, tours et barres des années 1970 dans les quartiers Franc-Moisin ou Cristino Garcia, et résidences récentes dans la Plaine Saint-Denis. Cette variété demande une équipe expérimentée et du matériel adapté.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Grondin Déménagement effectue une visite gratuite pour dresser l'inventaire et évaluer les accès. Nous planifions l'intervention en tenant compte des contraintes de circulation locales et protégeons systématiquement les parties communes. Notre devis vous est remis sous 24h.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Le secteur de la Plaine Saint-Denis est en pleine transformation depuis les années 2010 avec l'émergence de nombreux logements neufs dans des opérations mixtes logements-bureaux, en particulier autour du RER B. Cette zone accueille un nombre croissant de ménages qui quittent Paris intra-muros pour bénéficier de surfaces plus grandes à des prix plus accessibles. Nous y intervenons régulièrement pour des déménagements Paris-Saint-Denis ou dans le sens inverse. Le quartier Pleyel, en cours de renouvellement urbain avec la future Cité musicale, génère également des livraisons dans des immeubles récents avec protocoles de réception stricts que nos équipes gèrent en amont.
             </p>
 
             <div className="mb-8">

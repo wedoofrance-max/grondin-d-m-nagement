@@ -30,9 +30,27 @@ const FAQ = [
   },
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/services/encombrement-nettoyage-paris#service',
+  name: 'Débarras & Évacuation d\'encombrants Paris',
+  description: 'Service de débarras et évacuation d\'encombrants à Paris. Cave, grenier, appartement entier. Tri, évacuation et recyclage responsable.',
+  url: 'https://grondin-demenagement.fr/services/encombrement-nettoyage-paris',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Paris', sameAs: 'https://www.wikidata.org/wiki/Q90' },
+  serviceType: 'Junk Removal Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function EncombrementNettoyageParisPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <BreadcrumbSchema items={[
         { label: 'Nos services', href: 'https://grondin-demenagement.fr/services' },
         { label: 'Encombrement & nettoyage Paris', href: 'https://grondin-demenagement.fr/services/encombrement-nettoyage-paris' },

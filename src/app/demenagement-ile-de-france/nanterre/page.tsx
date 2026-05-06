@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/nanterre#service',
+  name: 'Déménagement Nanterre',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Nanterre', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/nanterre',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementNanterrePage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementNanterrePage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Nanterre', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/nanterre' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementNanterrePage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Nanterre présente une grande hétérogénéité de logements : appartements dans des tours des années 1970, maisons de ville dans les quartiers résidentiels du Mont-Valérien, et résidences plus récentes dans les secteurs rénovés. Cette diversité implique des besoins très différents en termes d'équipement et d'organisation.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Grondin Déménagement vous propose une visite gratuite à domicile pour évaluer votre situation précise. Nous établissons un devis détaillé sous 24h et intervenons avec une équipe et un véhicule dimensionnés à votre volume. La protection des parties communes est systématique.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              La proximité immédiate de La Défense — le plus grand quartier d'affaires d'Europe — fait de Nanterre une destination prisée des actifs du secteur tertiaire. Nombre de nos missions à Nanterre concernent des cadres qui s'installent à quelques minutes à pied ou en RER de leur lieu de travail. Par ailleurs, la future gare Nanterre-La Folie sur la ligne 15 du Grand Paris Express (mise en service prévue d'ici 2030) entraîne déjà une revalorisation des quartiers alentour et une hausse sensible des déménagements entrants dans ce secteur en pleine mutation.
             </p>
 
             <div className="mb-8">

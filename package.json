@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iconify-json/ph": "^1.2.2",
     "@iconify/react": "^6.0.2",
     "@prisma/client": "^5.22.0",
     "clsx": "^2.1.1",

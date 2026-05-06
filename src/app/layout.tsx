@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer'
 import { StickyMobileCTA } from '@/components/layout/StickyMobileCTA'
 import { StickyWhatsApp } from '@/components/layout/StickyWhatsApp'
 import { ToastProvider } from '@/components/layout/ToastContainer'
+import { IconifyProvider } from '@/components/layout/IconifyProvider'
 import './globals.css'
 
 const inter = Inter({
@@ -64,6 +65,13 @@ const businessSchema = {
   email: 'contact@grondin-demenagement.fr',
   image: 'https://grondin-demenagement.fr/images/og-grondin-demenagement.webp',
   description: 'Expert du déménagement à Paris et en Île-de-France. Disponible 7j/7 de 8h30 à 20h. Devis gratuit. 4,9/5 sur Google.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Paris',
+    postalCode: '75011',
+    addressRegion: 'Île-de-France',
+    addressCountry: 'FR',
+  },
   priceRange: '€€',
   openingHoursSpecification: [
     {
@@ -136,6 +144,25 @@ const businessSchema = {
   parentOrganization: { '@id': 'https://grondin-demenagement.fr/#organization' },
 }
 
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://grondin-demenagement.fr/#website',
+  url: 'https://grondin-demenagement.fr',
+  name: 'Grondin Déménagement',
+  description: 'Expert du déménagement à Paris et en Île-de-France',
+  inLanguage: 'fr-FR',
+  publisher: { '@id': 'https://grondin-demenagement.fr/#business' },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://grondin-demenagement.fr/conseils?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={inter.variable}>
@@ -144,15 +171,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="preconnect" href="https://api.iconify.design" />
-        <link
-          rel="preload"
-          as="image"
-          href="/images/hero-demenagement-paris.webp"
-          fetchPriority="high"
-        />
         {/* Géolocalisation */}
         <meta name="geo.region"    content="FR-IDF" />
         <meta name="geo.placename" content="Paris, Île-de-France" />
@@ -182,16 +207,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `}</Script>
           </>
         )}
-        <ToastProvider>
-          <a href="#main-content" className="skip-link">Aller au contenu principal</a>
-          <Header />
-          <main id="main-content">
-            {children}
-          </main>
-          <Footer />
-          <StickyMobileCTA />
-          <StickyWhatsApp />
-        </ToastProvider>
+        <IconifyProvider>
+          <ToastProvider>
+            <a href="#main-content" className="skip-link">Aller au contenu principal</a>
+            <Header />
+            <main id="main-content">
+              {children}
+            </main>
+            <Footer />
+            <StickyMobileCTA />
+            <StickyWhatsApp />
+          </ToastProvider>
+        </IconifyProvider>
       </body>
     </html>
   )

@@ -30,9 +30,27 @@ const FAQ = [
   },
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/services/transport-marchandises-paris#service',
+  name: 'Transport de marchandises Paris & Île-de-France',
+  description: 'Transport de colis, matériel et marchandises à Paris et en Île-de-France. Véhicules adaptés, intervention rapide, devis gratuit.',
+  url: 'https://grondin-demenagement.fr/services/transport-marchandises-paris',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+  serviceType: 'Freight Transport Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function TransportMarchandisesParisPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <BreadcrumbSchema items={[
         { label: 'Nos services', href: 'https://grondin-demenagement.fr/services' },
         { label: 'Transport marchandises Paris', href: 'https://grondin-demenagement.fr/services/transport-marchandises-paris' },

@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/colombes#service',
+  name: 'Déménagement Colombes',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Colombes', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/colombes',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementColombesPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementColombesPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Colombes', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/colombes' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementColombesPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Colombes propose une variété de logements allant des appartements dans des immeubles collectifs des années 1960-80 aux maisons individuelles et pavillons avec jardins. Les déménagements de maison demandent généralement un volume plus important et une organisation plus poussée que les appartements, avec souvent des caves ou garages à vider en plus des pièces à vivre.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Grondin Déménagement vous accompagne avec une visite préalable gratuite pour estimer le volume exact, identifier les contraintes d'accès et vous proposer le matériel adapté. Nous gérons l'ensemble du déménagement de A à Z, couvert par notre assurance RC Professionnelle.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Colombes est une ville à dominante résidentielle, avec une majorité de maisons individuelles et de petits collectifs dans les quartiers du Petit-Colombes et des Fossés-Jean. Cette configuration favorise les déménagements de maisons ou de T4-T5, souvent plus volumineux, nécessitant de grands camions et des équipes dimensionnées en conséquence. La ville est bien desservie par la N192 et l'A86, ce qui facilite l'accès depuis Paris et les villes de la première couronne nord-ouest. Nos équipes connaissent les itinéraires alternatifs permettant d'éviter les congestions de l'A86 aux heures de pointe.
             </p>
 
             <div className="mb-8">

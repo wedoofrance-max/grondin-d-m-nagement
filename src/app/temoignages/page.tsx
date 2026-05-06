@@ -57,9 +57,19 @@ const REVIEWS_EXTENDED = [
   },
 ]
 
+const DATE_ISO: Record<string, string> = {
+  'Mars 2025':     '2025-03-15',
+  'Février 2025':  '2025-02-15',
+  'Janvier 2025':  '2025-01-15',
+  'Décembre 2024': '2024-12-15',
+  'Novembre 2024': '2024-11-15',
+  'Octobre 2024':  '2024-10-15',
+}
+
 const aggregateRatingSchema = {
   '@context': 'https://schema.org',
-  '@type':    'LocalBusiness',
+  '@type':    'MovingCompany',
+  '@id':      'https://grondin-demenagement.fr/#business',
   name:       'Grondin Déménagement',
   aggregateRating: {
     '@type':      'AggregateRating',
@@ -71,8 +81,8 @@ const aggregateRatingSchema = {
   review: REVIEWS_EXTENDED.map((r) => ({
     '@type':       'Review',
     author:        { '@type': 'Person', name: r.name },
-    datePublished: r.date,
-    reviewRating:  { '@type': 'Rating', ratingValue: String(r.rating) },
+    datePublished: DATE_ISO[r.date] ?? r.date,
+    reviewRating:  { '@type': 'Rating', ratingValue: String(r.rating), bestRating: '5' },
     reviewBody:    r.text,
   })),
 }

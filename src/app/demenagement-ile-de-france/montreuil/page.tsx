@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/montreuil#service',
+  name: 'Déménagement Montreuil',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Montreuil', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/montreuil',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementMontreuillPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementMontreuillPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Montreuil', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/montreuil' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementMontreuillPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Montreuil présente une grande variété de logements : maisons de ville avec jardins dans le vieux Montreuil, appartements récents dans les résidences neuves du quartier Boissière-Acacia, lofts et espaces atypiques dans le secteur des ateliers. Cette diversité demande une équipe flexible et bien équipée pour s'adapter à chaque situation.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Nous effectuons une visite préalable pour anticiper les difficultés d'accès, choisir le bon véhicule et vous proposer une formule adaptée. Notre devis est gratuit et vous est remis sous 24h. Le jour J, nos déménageurs protègent sol et murs des parties communes et travaillent méthodiquement pour un déménagement serein.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Montreuil a connu une forte densification depuis les années 2000 avec de nombreuses opérations de construction dans les secteurs Boissière-Acacia et Branly, qui ont remplacé d'anciennes zones pavillonnaires ou industrielles. Ces immeubles récents présentent des configurations variées : certains disposent de monte-charges de grande dimension, d'autres ont des halls étroits imposant le recours au monte-meubles extérieur. Le secteur des ateliers d'artistes, dans les rues autour de la rue de la République, génère par ailleurs des déménagements atypiques — grandes toiles, sculptures, matériel professionnel — pour lesquels notre formule sur-mesure est particulièrement adaptée.
             </p>
 
             <div className="mb-8">

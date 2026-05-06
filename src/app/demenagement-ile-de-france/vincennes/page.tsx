@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/vincennes#service',
+  name: 'Déménagement Vincennes',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Vincennes', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/vincennes',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementVincennesPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementVincennesPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Vincennes', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/vincennes' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementVincennesPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Les logements vincennois sont principalement des appartements dans des immeubles collectifs de bonne facture, ainsi que quelques maisons individuelles dans les rues calmes à l'est de la ville. Les immeubles du centre historique disposent souvent d'escaliers en pierre et d'ascenseurs plus petits, ce qui demande une planification rigoureuse pour les pièces volumineuses.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Grondin Déménagement organise une visite gratuite pour évaluer votre situation et vous remettre un devis personnalisé. Nous nous occupons des formalités auprès du syndic si votre immeuble l'exige, et intervenons avec une équipe dimensionnée à votre volume.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              La présence du Château de Vincennes, classé monument historique et partiellement occupé par le ministère de la Défense, implique des restrictions de circulation sur certains axes proches, notamment l'avenue de Paris et les rues bordant le fort. Les jours de cérémonie officielle, l'accès à certains secteurs peut être temporairement restreint. Grondin Déménagement prend en compte le calendrier local lors de la planification pour éviter toute mauvaise surprise. Par ailleurs, la proximité du Bois de Vincennes est un atout pour les familles : de nombreux clients nous sollicitent pour des déménagements vers les rues calmes autour du lac Daumesnil ou de l'avenue de Nogent.
             </p>
 
             <div className="mb-8">

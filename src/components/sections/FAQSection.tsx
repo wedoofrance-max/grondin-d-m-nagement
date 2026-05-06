@@ -21,7 +21,22 @@ export function FAQSection({
 }: FAQSectionProps) {
   const [open, setOpen] = useState<number | null>(0)
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  }
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     <section className="py-20 bg-neutral-50" aria-label="Questions fréquentes">
       <div className="max-w-3xl mx-auto px-4 lg:px-8">
         <div className="text-center mb-12">
@@ -69,5 +84,6 @@ export function FAQSection({
         </dl>
       </div>
     </section>
+    </>
   )
 }

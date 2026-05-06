@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/issy-les-moulineaux#service',
+  name: 'Déménagement Issy-les-Moulineaux',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Issy-les-Moulineaux', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/issy-les-moulineaux',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementIssyPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementIssyPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Issy-les-Moulineaux', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/issy-les-moulineaux' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementIssyPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Issy-les-Moulineaux présente une variété de typologies de logements : appartements dans des immeubles des années 1960-70 côté Fort d'Issy, résidences récentes avec hall sécurisé dans le Val-de-Seine, maisons individuelles dans les rues calmes de la Croix de Pierre. Notre équipe s'adapte à chacune de ces configurations.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Nous proposons une visite gratuite à domicile pour évaluer le volume, les accès (ascenseur, escaliers, cour) et vous remettre un devis détaillé sous 24h. Le jour du déménagement, nous protégeons les parties communes et assurons un déménagement propre et organisé.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Issy-les-Moulineaux abrite un nombre important de studios et appartements dans les immeubles récents du secteur du Village, ainsi que des logements neufs construits sur l'ancien site industriel du Fort d'Issy, reconverti depuis les années 2000 en quartier mixte logements-médias. Cette zone, qui accueille de grandes chaînes audiovisuelles, génère une population de cadres très mobile aux déménagements fréquents. La proximité de la Seine et du périphérique crée des contraintes d'accès variables selon les horaires : nos équipes choisissent les itinéraires d'approche en fonction du jour et de l'heure d'intervention pour garantir l'efficacité de la prestation.
             </p>
 
             <div className="mb-8">

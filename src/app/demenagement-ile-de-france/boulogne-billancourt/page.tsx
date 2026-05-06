@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/boulogne-billancourt#service',
+  name: 'Déménagement Boulogne-Billancourt',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Boulogne-Billancourt', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/boulogne-billancourt',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementBoulogneBillancourtPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementBoulogneBillancourtPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Boulogne-Billancourt', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/boulogne-billancourt' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementBoulogneBillancourtPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               Boulogne-Billancourt concentre une grande diversité de logements : immeubles modernes avec accès digicode et monte-charge, résidences de standing aux halls étroits, maisons de ville et pavillons dans les rues calmes autour du Parc de Saint-Cloud. Chaque déménagement nécessite une organisation précise pour garantir la protection des meubles et le respect des parties communes.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Grondin Déménagement réalise une visite gratuite à votre domicile pour dresser un inventaire complet et identifier les contraintes d'accès. Le devis vous est transmis sous 24h, sans engagement. Le jour J, nos équipes arrivent avec le matériel de protection adapté : couvertures de déménagement, sangles, monte-meubles si nécessaire.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              La commune s'est profondément transformée ces dernières années avec le développement du quartier du Trapèze, sur l'ancien site des usines Renault. Ce nouveau quartier dense, composé principalement de résidences neuves en R+5 à R+10, concentre une part croissante des déménagements que nous effectuons à Boulogne-Billancourt. Les livraisons y suivent des protocoles stricts : créneaux horaires 8h–18h, réservation de l'ascenseur de service obligatoire et dépôt de caution auprès du gardien. Grondin Déménagement anticipe ces contraintes dès la prise de contact pour que le jour J se déroule sans accroc.
             </p>
 
             <div className="mb-8">

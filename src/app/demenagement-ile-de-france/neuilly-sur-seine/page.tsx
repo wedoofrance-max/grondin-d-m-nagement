@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/neuilly-sur-seine#service',
+  name: 'Déménagement Neuilly-sur-Seine',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Neuilly-sur-Seine', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/neuilly-sur-seine',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementNeuillyPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementNeuillyPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Neuilly-sur-Seine', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/neuilly-sur-seine' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementNeuillyPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               À Neuilly-sur-Seine, les logements sont souvent spacieux et bien équipés : double parking souterrain, ascenseurs de grande dimension, couloirs larges. Mais certaines résidences imposent des créneaux horaires stricts, un accès restreint aux monte-charges, ou la présence obligatoire d'un protège-ascenseur fourni par le déménageur. Grondin Déménagement prend en compte toutes ces contraintes dès la phase de devis.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Nous effectuons une visite à domicile pour dresser l'inventaire complet, identifier le mobilier nécessitant un emballage spécifique (œuvres d'art, objets fragiles, meubles anciens) et vous proposer la formule la mieux adaptée. Chaque intervention est couverte par notre assurance RC Professionnelle.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Beaucoup de résidences de Neuilly fonctionnent avec des règlements intérieurs très stricts encadrant les déménagements : obligation de fournir une attestation RC Professionnelle du déménageur, caution de garantie versée au gardien avant intervention, protection obligatoire des ascenseurs avec des tapis fournis par le prestataire, et créneaux horaires restreints (souvent 9h–12h et 14h–17h uniquement). Grondin Déménagement transmet systématiquement l'ensemble des documents nécessaires à votre gestionnaire de copropriété dès la confirmation du devis, afin d'éviter tout blocage le jour J.
             </p>
 
             <div className="mb-8">

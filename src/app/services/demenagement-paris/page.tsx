@@ -55,9 +55,27 @@ const FAQ = [
   },
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/services/demenagement-paris#service',
+  name: 'Déménagement à Paris',
+  description: 'Service de déménagement professionnel dans les 20 arrondissements de Paris. Équipes expérimentées, assurance incluse, disponibles 7j/7.',
+  url: 'https://grondin-demenagement.fr/services/demenagement-paris',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Paris', sameAs: 'https://www.wikidata.org/wiki/Q90' },
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementParisServicePage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <BreadcrumbSchema items={[
         { label: 'Nos services', href: 'https://grondin-demenagement.fr/services' },
         { label: 'Déménagement Paris', href: 'https://grondin-demenagement.fr/services/demenagement-paris' },

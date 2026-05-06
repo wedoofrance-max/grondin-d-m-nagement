@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import dynamic from 'next/dynamic'
 
 const HeroSection = dynamic(
@@ -91,6 +92,19 @@ export default function HomePage() {
         </div>
       </section>
       <OffresSection />
+      <div className="bg-grondin-50 border-y border-grondin-100">
+        <div className="max-w-[1400px] mx-auto px-4 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-sm text-grondin-800 font-medium">
+            Vous souhaitez estimer le coût de votre déménagement avant de demander un devis ?
+          </p>
+          <Link
+            href="/conseils/prix-demenagement-guide"
+            className="flex-shrink-0 text-sm font-bold text-grondin-600 hover:text-grondin-500 underline underline-offset-2"
+          >
+            Consulter notre guide des prix →
+          </Link>
+        </div>
+      </div>
       <GoogleReviews />
       <FAQSection
         items={FAQ_ITEMS}

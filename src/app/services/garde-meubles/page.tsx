@@ -31,9 +31,27 @@ const FAQ = [
   },
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/services/garde-meubles#service',
+  name: 'Garde-meubles Île-de-France',
+  description: 'Box de stockage sécurisé à Paris et Île-de-France. Solutions de garde-meubles à la semaine ou au mois, accessibles 7j/7.',
+  url: 'https://grondin-demenagement.fr/services/garde-meubles',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'AdministrativeArea', name: 'Île-de-France' },
+  serviceType: 'Storage Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function GardeMeublesPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <BreadcrumbSchema items={[
         { label: 'Nos services', href: 'https://grondin-demenagement.fr/services' },
         { label: 'Garde-meubles', href: 'https://grondin-demenagement.fr/services/garde-meubles' },

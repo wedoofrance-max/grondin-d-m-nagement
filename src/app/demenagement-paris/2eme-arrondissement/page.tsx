@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-paris/2eme-arrondissement#service',
+  name: 'Déménagement 2ème arrondissement de Paris',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Paris', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-paris/2eme-arrondissement',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementParis2Page() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementParis2Page() {
         { label: 'Déménagement Paris', href: 'https://grondin-demenagement.fr/demenagement-paris' },
         { label: 'Paris 2ème', href: 'https://grondin-demenagement.fr/demenagement-paris/2eme-arrondissement' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -121,6 +139,14 @@ export default function DemenagementParis2Page() {
               <Icon icon="ph:arrow-left" width={16} height={16} aria-hidden />
               Tous les arrondissements
             </Link>
+            <div className="p-4 bg-neutral-50 rounded-xl border border-neutral-200">
+              <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wide mb-2">Arrondissements voisins</p>
+              <div className="flex flex-col gap-1">
+                <Link href="/demenagement-paris/1er-arrondissement" className="text-sm text-grondin-600 hover:text-grondin-500 hover:underline">→ 1er arr.</Link>
+                <Link href="/demenagement-paris/3eme-arrondissement" className="text-sm text-grondin-600 hover:text-grondin-500 hover:underline">→ 3ème arr.</Link>
+                <Link href="/demenagement-paris/9eme-arrondissement" className="text-sm text-grondin-600 hover:text-grondin-500 hover:underline">→ 9ème arr.</Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

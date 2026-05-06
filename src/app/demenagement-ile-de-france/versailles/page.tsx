@@ -27,6 +27,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/versailles#service',
+  name: 'Déménagement Versailles',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Versailles', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/versailles',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementVersaillesPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -34,6 +51,7 @@ export default function DemenagementVersaillesPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Versailles', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/versailles' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -69,8 +87,11 @@ export default function DemenagementVersaillesPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               La ville de Versailles propose un habitat diversifié : appartements avec hauts plafonds dans les immeubles classés du quartier Notre-Dame, pavillons avec sous-sol et garage dans les zones résidentielles de Porchefontaine ou Jussieu, et résidences plus récentes autour de la gare Versailles-Chantiers. Chaque logement demande une approche spécifique pour protéger meubles et parquets.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Grondin Déménagement intervient à Versailles avec une visite gratuite préalable pour établir un devis précis. Nous gérons les autorisations de stationnement si nécessaire et adaptons nos horaires pour limiter l'impact sur votre voisinage. Notre assurance RC Professionnelle couvre l'intégralité du déménagement.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Le centre historique de Versailles est partiellement soumis à des restrictions de circulation pour les véhicules de fort tonnage sur certains axes proches du château et du quartier Notre-Dame. Nos chauffeurs connaissent les itinéraires autorisés et les créneaux adaptés pour éviter les pics de circulation touristique, particulièrement marqués entre mars et octobre. Les jours de grande affluence, nous planifions les interventions tôt le matin ou en semaine afin de garantir des conditions optimales de chargement et de déchargement.
             </p>
 
             <div className="mb-8">

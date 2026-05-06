@@ -3,6 +3,7 @@ import { motion, type Variants } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Icon } from '@iconify/react'
+import Image from 'next/image'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 22 },
@@ -33,17 +34,20 @@ export function HeroSection() {
     <section className="relative overflow-hidden" aria-label="Section principale">
 
       {/* ── Full-bleed photo area ── */}
-      <div
-        className="relative flex flex-col min-h-[600px] lg:min-h-[680px]"
-        style={{
-          backgroundImage: "url('/images/hero-demenagement-paris.webp')",
-          backgroundSize:     'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat:   'no-repeat',
-          filter: 'none',
-        }}
-      >
-        {/* Blurred photo layer via pseudo — achieved with inset div + blur */}
+      <div className="relative flex flex-col min-h-[600px] lg:min-h-[680px]">
+        {/* LCP image — loaded eagerly with priority */}
+        <Image
+          src="/images/hero-demenagement-paris.webp"
+          alt=""
+          fill
+          priority
+          fetchPriority="high"
+          className="object-cover object-center"
+          style={{ zIndex: 0 }}
+          aria-hidden
+        />
+
+        {/* Blurred decorative layer */}
         <div
           className="absolute inset-0"
           style={{
@@ -52,7 +56,7 @@ export function HeroSection() {
             backgroundPosition: 'center',
             filter:             'blur(6px)',
             transform:          'scale(1.06)',
-            zIndex:             0,
+            zIndex:             1,
           }}
           aria-hidden
         />
@@ -60,17 +64,17 @@ export function HeroSection() {
         {/* Dark overlay */}
         <div
           className="absolute inset-0"
-          style={{ zIndex: 1, background: 'linear-gradient(to top, rgba(7,26,46,0.72) 0%, rgba(7,26,46,0.38) 50%, rgba(7,26,46,0.18) 100%)' }}
+          style={{ zIndex: 2, background: 'linear-gradient(to top, rgba(7,26,46,0.72) 0%, rgba(7,26,46,0.38) 50%, rgba(7,26,46,0.18) 100%)' }}
           aria-hidden
         />
 
-        {/* Floating social proof — top right, z-[2] */}
+        {/* Floating social proof — top right, z-[3] */}
         <motion.div
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.5 }}
           className="absolute top-6 right-6 lg:right-10"
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 3 }}
         >
           <div className="flex items-center gap-3 bg-white rounded-2xl shadow-lg px-4 py-2.5">
             <div className="flex gap-0.5">
@@ -85,13 +89,13 @@ export function HeroSection() {
           </div>
         </motion.div>
 
-        {/* Main content — centered over photo, z-[2] */}
+        {/* Main content — centered over photo, z-[3] */}
         <motion.div
           variants={stagger}
           initial="hidden"
           animate="show"
           className="relative flex-1 flex flex-col items-center justify-center text-center px-4 pt-16 pb-8"
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 3 }}
         >
           {/* Live badge */}
           <motion.div variants={fadeUp} className="mb-5">
@@ -134,13 +138,13 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* ── Inline quick-devis form — pinned to bottom of photo, z-[2] ── */}
+        {/* ── Inline quick-devis form — pinned to bottom of photo, z-[3] ── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.65, ease: 'easeOut' }}
           className="relative px-4 pb-0"
-          style={{ zIndex: 2 }}
+          style={{ zIndex: 3 }}
         >
           <form
             onSubmit={handleQuickDevis}
@@ -218,7 +222,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Breathing space under form */}
-        <div className="h-10" style={{ zIndex: 2, position: 'relative' }} aria-hidden />
+        <div className="h-10" style={{ zIndex: 3, position: 'relative' }} aria-hidden />
       </div>
 
     </section>

@@ -2,57 +2,46 @@ import type { MetadataRoute } from 'next'
 
 const BASE = 'https://grondin-demenagement.fr'
 
-const CONSEIL_SLUGS = [
-  'checklist-demenagement-paris',
-  'comment-bien-emballer-ses-affaires',
-  'obtenir-autorisation-stationnement-paris',
-  'demenagement-paris-haussmannien',
-  'demenagement-longue-distance-france',
-  'changer-adresse-apres-demenagement',
-  'recuperer-caution-apres-demenagement',
-  'demenagement-avec-enfants',
-  'comment-demenager-paris',
-  'prix-demenagement-guide',
-  'cartons-demenagement-combien',
-  'resiliation-abonnements',
-  'aide-financiere-demenagement',
-  'demenagement-etudiant-paris',
-  'demenagement-senior-paris',
-  'assurance-demenagement',
-  'demenagement-hiver',
-  'meilleurs-quartiers-paris-2026',
-  'demenager-paris-petit-budget',
-  'garde-meubles-paris-comparatif',
-  'demenagement-piano-oeuvre-art',
-  'emballage-fragiles-conseils',
-  'demenagement-plantes-vertes',
-  'demenagement-animaux-paris',
-  'demenagement-ecologique-paris',
-  'demenagement-week-end-paris',
-  'monte-meuble-utilisation',
-]
+const d = (s: string) => new Date(s)
+
+const CONSEIL_DATES: Record<string, Date> = {
+  'checklist-demenagement-paris':               d('2025-11-10'),
+  'comment-bien-emballer-ses-affaires':         d('2025-11-12'),
+  'obtenir-autorisation-stationnement-paris':   d('2025-11-14'),
+  'demenagement-paris-haussmannien':            d('2025-11-17'),
+  'comment-demenager-paris':                    d('2025-11-19'),
+  'cartons-demenagement-combien':               d('2025-11-22'),
+  'changer-adresse-apres-demenagement':         d('2025-11-25'),
+  'resiliation-abonnements':                    d('2025-11-27'),
+  'aide-financiere-demenagement':               d('2025-12-01'),
+  'assurance-demenagement':                     d('2025-12-03'),
+  'recuperer-caution-apres-demenagement':       d('2025-12-05'),
+  'demenagement-longue-distance-france':        d('2025-12-08'),
+  'demenagement-avec-enfants':                  d('2025-12-10'),
+  'demenagement-etudiant-paris':                d('2025-12-12'),
+  'demenagement-senior-paris':                  d('2025-12-15'),
+  'meilleurs-quartiers-paris-2026':             d('2025-12-18'),
+  'demenagement-hiver':                         d('2025-12-20'),
+  'demenager-paris-petit-budget':               d('2025-12-22'),
+  'garde-meubles-paris-comparatif':             d('2025-12-24'),
+  'demenagement-piano-oeuvre-art':              d('2026-01-08'),
+  'emballage-fragiles-conseils':                d('2026-01-12'),
+  'demenagement-plantes-vertes':                d('2026-01-15'),
+  'demenagement-animaux-paris':                 d('2026-01-18'),
+  'demenagement-ecologique-paris':              d('2026-01-22'),
+  'demenagement-week-end-paris':                d('2026-01-25'),
+  'monte-meuble-utilisation':                   d('2026-02-01'),
+  'prix-demenagement-guide':                    d('2026-05-06'),
+}
 
 const PARIS_ARRONDISSEMENTS = [
-  '1er-arrondissement',
-  '2eme-arrondissement',
-  '3eme-arrondissement',
-  '4eme-arrondissement',
-  '5eme-arrondissement',
-  '6eme-arrondissement',
-  '7eme-arrondissement',
-  '8eme-arrondissement',
-  '9eme-arrondissement',
-  '10eme-arrondissement',
-  '11eme-arrondissement',
-  '12eme-arrondissement',
-  '13eme-arrondissement',
-  '14eme-arrondissement',
-  '15eme-arrondissement',
-  '16eme-arrondissement',
-  '17eme-arrondissement',
-  '18eme-arrondissement',
-  '19eme-arrondissement',
-  '20eme-arrondissement',
+  '1er-arrondissement',  '2eme-arrondissement',  '3eme-arrondissement',
+  '4eme-arrondissement',  '5eme-arrondissement',  '6eme-arrondissement',
+  '7eme-arrondissement',  '8eme-arrondissement',  '9eme-arrondissement',
+  '10eme-arrondissement', '11eme-arrondissement', '12eme-arrondissement',
+  '13eme-arrondissement', '14eme-arrondissement', '15eme-arrondissement',
+  '16eme-arrondissement', '17eme-arrondissement', '18eme-arrondissement',
+  '19eme-arrondissement', '20eme-arrondissement',
 ]
 
 const IDF_CITIES = [
@@ -81,63 +70,57 @@ const SERVICES = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
+  const launch = d('2025-11-01')
+  const recent = d('2026-05-06')
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: BASE,                              lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${BASE}/devis`,                   lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/services`,                lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/offres`,                  lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/demenagement-paris`,      lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
-    { url: `${BASE}/demenagement-ile-de-france`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/demenagement-hauts-de-seine-92`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/demenagement-val-de-marne-94`,  lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/demenagement-seine-saint-denis-93`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/demenagement-seine-et-marne-77`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${BASE}/demenagement-longue-distance`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/faq`,                     lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/temoignages`,             lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/conseils`,                lastModified: now, changeFrequency: 'weekly',  priority: 0.7 },
-    { url: `${BASE}/a-propos`,                lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/contact`,                 lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/offres/economique`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/offres/confort`,          lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/offres/premium`,          lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: BASE,                                           lastModified: recent  },
+    { url: `${BASE}/devis`,                                lastModified: launch  },
+    { url: `${BASE}/services`,                             lastModified: launch  },
+    { url: `${BASE}/offres`,                               lastModified: launch  },
+    { url: `${BASE}/offres/economique`,                    lastModified: launch  },
+    { url: `${BASE}/offres/confort`,                       lastModified: launch  },
+    { url: `${BASE}/offres/premium`,                       lastModified: launch  },
+    { url: `${BASE}/demenagement-paris`,                   lastModified: recent  },
+    { url: `${BASE}/demenagement-ile-de-france`,           lastModified: recent  },
+    { url: `${BASE}/demenagement-hauts-de-seine-92`,       lastModified: launch  },
+    { url: `${BASE}/demenagement-val-de-marne-94`,         lastModified: launch  },
+    { url: `${BASE}/demenagement-seine-saint-denis-93`,    lastModified: launch  },
+    { url: `${BASE}/demenagement-seine-et-marne-77`,       lastModified: launch  },
+    { url: `${BASE}/demenagement-longue-distance`,         lastModified: launch  },
+    { url: `${BASE}/faq`,                                  lastModified: launch  },
+    { url: `${BASE}/temoignages`,                          lastModified: launch  },
+    { url: `${BASE}/conseils`,                             lastModified: recent  },
+    { url: `${BASE}/a-propos`,                             lastModified: launch  },
+    { url: `${BASE}/contact`,                              lastModified: launch  },
+    { url: `${BASE}/legal/mentions-legales`,               lastModified: launch  },
+    { url: `${BASE}/legal/politique-de-confidentialite`,   lastModified: launch  },
+    { url: `${BASE}/legal/cgv`,                            lastModified: launch  },
   ]
 
   const serviceRoutes: MetadataRoute.Sitemap = SERVICES.map((slug) => ({
     url: `${BASE}/services/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.85,
+    lastModified: launch,
   }))
 
   const arrondissementRoutes: MetadataRoute.Sitemap = PARIS_ARRONDISSEMENTS.map((slug) => ({
     url: `${BASE}/demenagement-paris/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.8,
+    lastModified: launch,
   }))
 
   const idfRoutes: MetadataRoute.Sitemap = IDF_CITIES.map((slug) => ({
     url: `${BASE}/demenagement-ile-de-france/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.75,
+    lastModified: recent,
   }))
 
   const longueDistanceRoutes: MetadataRoute.Sitemap = LONGUE_DISTANCE.map((slug) => ({
     url: `${BASE}/demenagement-longue-distance/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.75,
+    lastModified: launch,
   }))
 
-  const conseilRoutes: MetadataRoute.Sitemap = CONSEIL_SLUGS.map((slug) => ({
+  const conseilRoutes: MetadataRoute.Sitemap = Object.entries(CONSEIL_DATES).map(([slug, date]) => ({
     url: `${BASE}/conseils/${slug}`,
-    lastModified: now,
-    changeFrequency: 'monthly',
-    priority: 0.65,
+    lastModified: date,
   }))
 
   return [

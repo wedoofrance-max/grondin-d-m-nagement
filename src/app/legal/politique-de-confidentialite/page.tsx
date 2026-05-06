@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Politique de Confidentialité — Grondin Déménagement',
   description: 'Politique de confidentialité de Grondin Déménagement. Comment nous collectons, utilisons et protégeons vos données personnelles.',
   robots: { index: false, follow: true },
+  alternates: { canonical: 'https://grondin-demenagement.fr/legal/politique-de-confidentialite' },
 }
 
 export default function PolitiqueConfidentialitePage() {

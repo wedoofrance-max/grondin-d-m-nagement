@@ -31,9 +31,27 @@ const FAQ = [
   },
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/services/nettoyage-demenagement-paris#service',
+  name: 'Nettoyage fin de bail Paris',
+  description: 'Nettoyage professionnel fin de bail à Paris. Remise en état complète pour récupérer votre caution. Intervention rapide dans les 20 arrondissements.',
+  url: 'https://grondin-demenagement.fr/services/nettoyage-demenagement-paris',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Paris', sameAs: 'https://www.wikidata.org/wiki/Q90' },
+  serviceType: 'Cleaning Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function NettoyageDemenagementParisPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <BreadcrumbSchema items={[
         { label: 'Nos services', href: 'https://grondin-demenagement.fr/services' },
         { label: 'Nettoyage déménagement Paris', href: 'https://grondin-demenagement.fr/services/nettoyage-demenagement-paris' },

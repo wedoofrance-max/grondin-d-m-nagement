@@ -31,9 +31,27 @@ const FAQ = [
   },
 ]
 
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/services/demenagement-express-paris#service',
+  name: 'Déménagement express Paris',
+  description: 'Déménagement d\'urgence à Paris sous 24 à 48h. Intervention rapide pour les déménagements de dernière minute dans les 20 arrondissements.',
+  url: 'https://grondin-demenagement.fr/services/demenagement-express-paris',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Paris', sameAs: 'https://www.wikidata.org/wiki/Q90' },
+  serviceType: 'Emergency Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementExpressParisPage() {
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <BreadcrumbSchema items={[
         { label: 'Nos services', href: 'https://grondin-demenagement.fr/services' },
         { label: 'Déménagement express Paris', href: 'https://grondin-demenagement.fr/services/demenagement-express-paris' },

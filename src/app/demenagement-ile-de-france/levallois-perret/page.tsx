@@ -26,6 +26,23 @@ const FAQ = [
   },
 ]
 
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://grondin-demenagement.fr/demenagement-ile-de-france/levallois-perret#service',
+  name: 'Déménagement Levallois-Perret',
+  provider: { '@id': 'https://grondin-demenagement.fr/#business' },
+  areaServed: { '@type': 'City', name: 'Levallois-Perret', addressRegion: 'Île-de-France' },
+  url: 'https://grondin-demenagement.fr/demenagement-ile-de-france/levallois-perret',
+  serviceType: 'Moving Service',
+  availableChannel: {
+    '@type': 'ServiceChannel',
+    serviceUrl: 'https://grondin-demenagement.fr/devis',
+    servicePhone: '+33185440050',
+  },
+}
+
 export default function DemenagementLevalloisPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -33,6 +50,7 @@ export default function DemenagementLevalloisPage() {
         { label: 'Déménagement Île-de-France', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france' },
         { label: 'Déménagement Levallois-Perret', href: 'https://grondin-demenagement.fr/demenagement-ile-de-france/levallois-perret' },
       ]} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
 
       <div className="bg-grondin-900 py-14">
         <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
@@ -68,8 +86,11 @@ export default function DemenagementLevalloisPage() {
             <p className="text-neutral-600 leading-relaxed mb-4">
               À Levallois-Perret, les logements sont majoritairement des appartements en immeuble collectif, souvent construits dans les années 1970-2000. Les parkings souterrains, couloirs étroits et accès restreints aux monte-charges sont courants. Certaines résidences imposent des horaires d'intervention et exigent la protection des parties communes avant tout déménagement.
             </p>
-            <p className="text-neutral-600 leading-relaxed mb-6">
+            <p className="text-neutral-600 leading-relaxed mb-4">
               Grondin Déménagement prend rendez-vous pour une visite gratuite à votre domicile afin d'identifier toutes ces contraintes avant le jour J. Nous préparons le matériel adapté — protections de sol, couvertures, sangles — et vous informons des démarches à effectuer auprès de votre syndic si nécessaire.
+            </p>
+            <p className="text-neutral-600 leading-relaxed mb-6">
+              Levallois-Perret est l'une des communes les plus denses de France — plus de 26 000 habitants au km², soit une densité supérieure à Paris intra-muros. Cette pression se traduit par une concurrence permanente pour le stationnement : les couloirs de livraison en surface sont rares et les opérations de déménagement nécessitent impérativement une autorisation délivrée par la mairie de Levallois. Nos équipes gèrent ces démarches administratives et s'organisent pour intervenir tôt le matin, avant le pic de circulation, afin de sécuriser les emplacements nécessaires au bon déroulement du déménagement.
             </p>
 
             <div className="mb-8">

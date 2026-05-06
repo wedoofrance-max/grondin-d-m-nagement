@@ -32,6 +32,8 @@ export default function MentionsLegalesPage() {
             </p>
             <ul className="list-none pl-0 space-y-1 text-neutral-600 mt-3">
               <li><strong>Siège social :</strong> Paris (75011), France</li>
+              <li><strong>SIRET :</strong> À compléter</li>
+              <li><strong>Forme juridique :</strong> SAS</li>
               <li><strong>Téléphone :</strong> <a href="tel:+33185440050" className="text-grondin-500 hover:underline">01 85 44 00 50</a></li>
               <li><strong>Email :</strong> <a href="mailto:contact@grondin-demenagement.fr" className="text-grondin-500 hover:underline">contact@grondin-demenagement.fr</a></li>
               <li><strong>Directeur de publication :</strong> Représentant légal de MustShine France</li>
